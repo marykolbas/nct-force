@@ -1,0 +1,57 @@
+<html>
+  <head>
+    <title>INFO 4310 - HW 2</title>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <style>
+
+    </style>
+   </head>
+
+   <body>
+    <div id="headers">
+      <h1>header</h1>
+      <!-- <h2>How many hours a day do people across the world spend on <span id="subtitle-filter">...</span>?</h2> -->
+    </div>
+  
+    <main>
+      <aside id="controls-sidebar" height="600">
+        <!-- <div id="category-filters"></div> -->
+      </aside> 
+      <div id="scatterplot-container">
+        <!-- <div id="scatterplot-legend" width="700" height="30"></div>
+        <svg id="scatterplot" width="700" height="600"></svg> -->
+      </div>
+      <aside id="detail-sidebar" height="730">
+        
+      </aside>
+    </main>
+  </body>
+  
+  <script>
+
+    const requestData = async function() {
+        const songs = await d3.csv("NCT_csv_order1.csv", d3.autoType)
+        console.log(songs)
+
+        //convert 'Date' string into datetime 
+        var parseTime = d3.timeParse("%m/%d/%Y");
+        songs.forEach(d => {
+            d.datetime = parseTime(d.Date)
+        })
+        
+        //in chronological order
+        let songs_sorted = d3.sort(data, (d) => d.datetime)
+        console.log(songs_sorted)
+
+        const members = await d3.json("chord_data_order1_s.json");
+
+
+    }
+
+    requestData()
+
+  </script>
+
+
+
+</html>
