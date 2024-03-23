@@ -3,11 +3,20 @@
     <title>INFO 4310 - HW 2</title>
     <script src="https://d3js.org/d3.v7.min.js"></script>
     <style>
-        .hovered_arc{
-            stroke: black;
-            z-index: 2;
+      #graph {
+        width: 100wh;
+        height: 100vh;
+      }
 
-        }
+      .hovered-arc {
+        stroke: black;
+        z-index: 4;
+      }
+
+      .not-hovered-arc {
+        stroke: lightgray;
+        z-index: 0;
+      }
     </style>
    </head>
 
@@ -21,7 +30,7 @@
         <aside id="detail-sidebar" height="730">
             <p id="small-label"></p>
         </aside>
-      <svg id="graph" height="900" width="1500" style="background: #sff; margin-top:50px" >
+      <svg id="graph" height="900" width="1500">
       </svg>
       
     </main>
@@ -101,35 +110,37 @@
                                 //                 .on("drag",dragging)
                                 //                 .on("end",dragend) )
                 )
-              .attr("transform", d => `translate(${d.x},${d.y})`);
-        
-
-        
+              .attr("transform", d => `translate(${d.x},${d.y})`)
+              .attr("name", d => d.name);
         
         circles.on("mouseover", function(event, d) { 
-            lines.style('stroke', function(l) {
-                if (d === l.source || d === l.target)
-                    return "black";
-                else
-                    return "#D3D3D3";
-                })
-                .style('opacity', function(l) {
-                if (d === l.source || d === l.target)
-                    return 1;
-                else
-                    return 0.5;
-                });
-            
 
-            d3.select("#small-label").text(d['name']);
+          let connectedNames = [];
+
+          d3.selectAll("line.link").each(function(l) {
+            if (d === l.source || d === l.target) {
+              d3.select(this).classed('hovered-arc', true).raise()
+
+              connectedNames.push(l.source.name);
+              connectedNames.push(l.target.name);
+            } else {
+              d3.select(this).classed('hovered-arc', false).lower();
+            }
+          })
+          d3.selectAll("circle.node").filter(function() {
+                return connectedNames.includes(d3.select(this).attr("name")); 
+          }).raise()
+
+          d3.selectAll("circle.node").filter(function() {
+            return !connectedNames.includes(d3.select(this).attr("name")); 
+          }).lower()
+          d3.select("#small-label").text(d['name']);
         });
 
-        // Set the stroke width back to normal when mouse leaves the node.
-        // circles.on('mouseout', function() {
-        //     link.style('stroke', "#D3D3D3");
-        //     link.style('opacity', 0.5)
-        //     });
-        
+        circles.on("mouseout", function(event, d) {
+          d3.selectAll("line.link").classed('hovered-arc', false).lower()
+          d3.select("#small-label").text("");
+        });
         }
 
         
