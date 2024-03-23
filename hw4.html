@@ -1,7 +1,9 @@
 <html>
   <head>
-    <title>INFO 4310 - HW 2</title>
+    <title>INFO 4310 - HW 4</title>
     <script src="https://d3js.org/d3.v7.min.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap">
+
     <style>
       /* -- general styling -- */
       body, html, main {
@@ -9,6 +11,7 @@
         width: 100%;
         padding: 0;
         margin: 0;
+        font-family: 'Lato', sans-serif;
       }
 
       main {
@@ -36,17 +39,21 @@
 
       /* -- styling force diagram elements -- */
       .hovered-arc {
-        stroke: black;
+        /* stroke: black; */
         z-index: 4;
       }
 
       .not-hovered-arc {
-        stroke: lightgray;
+        stroke: rgb(231, 231, 231);
         z-index: 0;
       }
 
       .unconnected-node :not(.filler) {
         opacity: 0.4;
+      }
+
+      .node-label:hover, .node:hover{
+        cursor: pointer;
       }
       
     </style>
@@ -90,6 +97,9 @@
       let links = members.edges;
 
       let viewport = layer.append("g");
+
+      const colorScale = {"NCT 127": "#e76f51", "NCT DREAM": "#e9c46a", "WayV": "#2a9d8f", "SuperM": "#F4A261"}
+      const color = d3.scaleOrdinal().domain(["NCT 127", "NCT DREAM", "WayV", "SuperM", "No Subunit"]).range(["#e76f51", "#e9c46a", "#2a9d8f", "#F4A261", "#264653"]);
       
       var plotZoom = d3.zoom().on("zoom", plotZoomed);
       d3.select("#graph").call(plotZoom);
@@ -110,7 +120,7 @@
                 // .force("link", d3.forceLink(links))
 
                                                 // if source and target don't provide array indices for nodes, .id will tell the force what to look for in the nodes when it is trying to connect things together. Provide a getter function for _node elements_
-                .force("repulse", d3.forceManyBody().strength(-2000) ) // electrostatic repulsion between all nodes to space them out
+                .force("repulse", d3.forceManyBody().strength(-5000) ) // electrostatic repulsion between all nodes to space them out
                 .force("center", d3.forceCenter(width/2.0, height/2.0)) // centering force to make sure points don't fly away completely
                 //.on("tick", render)
                 ;
@@ -121,16 +131,23 @@
 
       function render() {
         // data join for edges
-        let lines = viewport.selectAll("line.link").data(links)
+        let lines = viewport.selectAll("path.link").data(links)
             .join(
-              enter => enter.append("line")
+              enter => enter.append("path")
                             .attr("class","link")
-                            .attr("stroke","#D3D3D3") 
-                            .attr("stroke-width", 3)
+                            .attr("stroke","rgb(231, 231, 231)") 
+                            .attr("stroke-width", 2)
                             .style('opacity', 0.6)
+                            .attr("fill", "none")
             )
-            .attr("x1", d => d.source.x).attr("x2", d => d.target.x)   // Using the pointers d3.forceLink provides to access node x and y coords
-            .attr("y1", d => d.source.y).attr("y2", d => d.target.y);
+            // .attr("x1", d => d.source.x).attr("x2", d => d.target.x)   // Using the pointers d3.forceLink provides to access node x and y coords
+            // .attr("y1", d => d.source.y).attr("y2", d => d.target.y);
+            .attr("d", function(d) { // taken from https://stackoverflow.com/questions/13455510/curved-line-on-d3-force-directed-tree
+            var dx = d.target.x - d.source.x,
+                dy = d.target.y - d.source.y,
+                dr = Math.sqrt(dx * dx + dy * dy);
+            return "M" + d.source.x + "," + d.source.y + "A" + dr + "," + dr + " 0 0,1 " + d.target.x + "," + d.target.y;
+            });
 
 
         //  data join for nodes
@@ -149,13 +166,12 @@
 
         let nodeGroups = d3.selectAll(".node"); 
         nodeGroups.on("mouseover", function(event, d) { 
-          console.log("seen")
           let connectedNames = []; // tracking names of nodes connected to the hovered node
           
           // iterating over edges to find the ones that are connected to the hovered node
-          d3.selectAll("line.link").each(function(l) {
+          d3.selectAll("path.link").each(function(l) {
             if (d === l.source || d === l.target) {
-              d3.select(this).classed('hovered-arc', true).raise()
+              d3.select(this).classed('hovered-arc', true).raise().attr("stroke", d === l.source ? color(l.target.groups[0]) : color(l.source.groups[0]));
               nodeGroups.raise()
 
               connectedNames.push(l.source.name);
@@ -183,7 +199,7 @@
         nodeGroups.on("mouseout", function(event, d) {
           d3.select("#small-label").text("");
           nodeGroups.classed('unconnected-node', false)
-          d3.selectAll("line.link").classed('hovered-arc', false).lower()
+          d3.selectAll("path.link").classed('hovered-arc', false).lower().attr("stroke", "rgb(231, 231, 231)")
           
         });
       
@@ -195,12 +211,9 @@
       }
 
       function createNodeDonut(container, groups) {
-        const donutWidth = 100;
-        const donutHeight = 100;
+        const donutWidth = 120;
+        const donutHeight = 120;
         const radius = donutWidth / 2;
-
-        const colorScale = {"NCT 127": "#e76f51", "NCT DREAM": "#e9c46a", "WayV": "#2a9d8f", "SuperM": "#F4A261"}
-        const color = d3.scaleOrdinal().domain(["NCT 127", "NCT DREAM", "WayV", "SuperM", "No Subunit"]).range(["#e76f51", "#e9c46a", "#2a9d8f", "#F4A261", "#264653"]);
 
         const arc = d3.arc()
             .innerRadius(radius * 0.8) 
@@ -241,8 +254,6 @@
         return container;
       }
     }
-
-    
 
     requestData()
 
