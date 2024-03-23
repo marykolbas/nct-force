@@ -45,7 +45,7 @@
         z-index: 0;
       }
 
-      .unconnected-node {
+      .unconnected-node :not(.filler) {
         opacity: 0.4;
       }
       
@@ -132,40 +132,31 @@
             .attr("x1", d => d.source.x).attr("x2", d => d.target.x)   // Using the pointers d3.forceLink provides to access node x and y coords
             .attr("y1", d => d.source.y).attr("y2", d => d.target.y);
 
-        // data join for nodes
-        let circles = viewport.selectAll("circle.node").data(nodes)
+
+        //  data join for nodes
+        let circles = viewport.selectAll(".node").data(nodes)
               .join(
-                  enter => enter.append("svg:image")
-                                .attr("class","node")
-                                .attr("xlink:href", (d) => {
-                                  if (d.groups.length > 1) {
-                                    return d.name.toLowerCase() + ".svg"
-                                  } else if (d.groups.length == 0) {
-                                    return "no-subunit-cropped.svg"
-                                  } else {
-                                    return d.groups[0].replace(/\s+/g, '') + ".svg"
-                                  }
-                                })
-                                .attr("width", 100)
-                                .attr("height", 100)
-                                .attr("x", -50)
-                                .attr("y", -50)
-                                // .call( d3.drag().on("start",dragstart)
-                                //                  .on("drag",dragging)
-                                //                  .on("end",dragend) )
-                )
-              .attr("transform", d => `translate(${d.x},${d.y})`)
-              .attr("name", d => d.name)
-        
+                  enter => {
+                    const nodeGroup = enter.append("g")
+                      .attr("class", "node");
+
+                      nodeGroup.each(function(d) {
+                          createNodeDonut(d3.select(this), d.groups);
+                      });
+                  })
+                
         // handle mouseover of nodes
-        circles.on("mouseover", function(event, d) { 
+
+        let nodeGroups = d3.selectAll(".node"); 
+        nodeGroups.on("mouseover", function(event, d) { 
+          console.log("seen")
           let connectedNames = []; // tracking names of nodes connected to the hovered node
           
           // iterating over edges to find the ones that are connected to the hovered node
           d3.selectAll("line.link").each(function(l) {
             if (d === l.source || d === l.target) {
               d3.select(this).classed('hovered-arc', true).raise()
-              circles.raise()
+              nodeGroups.raise()
 
               connectedNames.push(l.source.name);
               connectedNames.push(l.target.name);
@@ -173,34 +164,85 @@
               d3.select(this).classed('hovered-arc', false).lower();
             }
           })
-          circles.filter(function() {
+          nodeGroups.filter(function() {
                 return connectedNames.includes(d3.select(this).attr("name")); 
           }).raise()
 
           // reduce opacity of unconnected nodes
-          circles.filter(function() {
+          nodeGroups.filter(function() {
             return !connectedNames.includes(d3.select(this).attr("name")); 
-          }).lower().classed('unconnected-node', true)
+          }).classed('unconnected-node', true).lower()
+          
           d3.select("#small-label").text(d['name']);
+          d3.selectAll(".link:not(.hovered-arc)").lower()
         });
 
+        
+
         // handle mouseout of nodes
-        circles.on("mouseout", function(event, d) {
-          d3.selectAll("line.link").classed('hovered-arc', false).lower()
+        nodeGroups.on("mouseout", function(event, d) {
           d3.select("#small-label").text("");
-          circles.classed('unconnected-node', false)
+          nodeGroups.classed('unconnected-node', false)
+          d3.selectAll("line.link").classed('hovered-arc', false).lower()
+          
         });
       
       }
-        render();
+      render();
 
-        function plotZoomed(event) {  
-          viewport.attr("transform", event.transform);
-        }
-        
-        
+      function plotZoomed(event) {  
+        viewport.attr("transform", event.transform);
+      }
 
-        }
+      function createNodeDonut(container, groups) {
+        const donutWidth = 100;
+        const donutHeight = 100;
+        const radius = donutWidth / 2;
+
+        const colorScale = {"NCT 127": "#e76f51", "NCT DREAM": "#e9c46a", "WayV": "#2a9d8f", "SuperM": "#F4A261"}
+        const color = d3.scaleOrdinal().domain(["NCT 127", "NCT DREAM", "WayV", "SuperM", "No Subunit"]).range(["#e76f51", "#e9c46a", "#2a9d8f", "#F4A261", "#264653"]);
+
+        const arc = d3.arc()
+            .innerRadius(radius * 0.8) 
+            .outerRadius(radius); 
+
+        const pie = d3.pie().value(() => 1);
+
+        const arcs = pie(groups);
+
+        const arcPaths = container.selectAll("arc")
+            .data(arcs)
+            .enter()
+            .append("g")
+            .attr("class", "arc");
+
+        arcPaths.append("path")
+            .attr("d", arc)
+            .attr("fill", (d, i) => color(d.data));
+
+        container.append("circle")
+            .attr("cx", 0)
+            .attr("cy", 0)
+            .attr("r", radius * 0.8)
+            .attr("fill", "white")
+            .attr("class", "filler");
+
+        container.append("text")
+            .attr("class", "node-label")
+            .attr("text-anchor", "middle")
+            .attr("dy", "0.35em")
+            .text(d => d.name);
+            
+        container.attr("x", -50)
+                  .attr("y", -50)
+                  .attr("name", d => d.name)
+                  .attr("transform", d => `translate(${d.x},${d.y})`)
+        
+        return container;
+      }
+    }
+
+    
 
     requestData()
 
