@@ -66,6 +66,10 @@
       var nodes = members.nodes;
       let links = members.edges;
 
+      let viewport = layer.append("g");
+      var plotZoom = d3.zoom().on("zoom", plotZoomed);
+      d3.select("#graph").call(plotZoom);
+
       console.log(nodes, links)
 
       var sim = d3.forceSimulation()
@@ -92,7 +96,7 @@
 
       function render() {
         // Edges
-        let lines = layer.selectAll("line.link").data(links)
+        let lines = viewport.selectAll("line.link").data(links)
             .join(
               enter => enter.append("line")
                             .attr("class","link")
@@ -104,7 +108,7 @@
             .attr("y1", d => d.source.y).attr("y2", d => d.target.y);
 
         // Nodes
-        let circles = layer.selectAll("circle.node").data(nodes)
+        let circles = viewport.selectAll("circle.node").data(nodes)
               .join(
                   enter => enter.append("circle")
                                 .attr("class","node")
@@ -156,6 +160,9 @@
 
         render();
 
+        function plotZoomed(event) {  
+          viewport.attr("transform", event.transform);
+        }
         
         
 
