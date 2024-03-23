@@ -3,11 +3,38 @@
     <title>INFO 4310 - HW 2</title>
     <script src="https://d3js.org/d3.v7.min.js"></script>
     <style>
-      #graph {
-        width: 100wh;
-        height: 100vh;
+      /* -- general styling -- */
+      body, html, main {
+        height: 100%;
+        width: 100%;
+        padding: 0;
+        margin: 0;
       }
 
+      main {
+        display: flex;
+      }
+
+      #graph-container {
+        width: 80vw;
+      }
+      
+      #graph {
+        width: 100%;
+        height: 100%;
+      }
+
+      #detail-sidebar {
+        width: 20%;
+        height: 100vh;
+        position: absolute;
+        z-index: 0;
+        right: 0;
+        background-color: white;
+        border-left: solid 1px lightgray;
+      }
+
+      /* -- styling force diagram elements -- */
       .hovered-arc {
         stroke: black;
         z-index: 4;
@@ -26,23 +53,15 @@
    </head>
 
    <body>
-    <div id="headers">
-      <h1>nct force</h1>
-      <!-- <h2>How many hours a day do people across the world spend on <span id="subtitle-filter">...</span>?</h2> -->
-    </div>
-  
     <main>
-        
         <div id="graph-container">
-            <svg id="graph" height="900" width="1500">
+            <svg id="graph" width="100vw" height ="100vh">
             </svg>
         </div>
 
-        <aside id="detail-sidebar" height="730">
+        <aside id="detail-sidebar">
             <p id="small-label">filler text</p>
         </aside>
-      
-      
     </main>
   </body>
   
@@ -62,15 +81,16 @@
 
       // --------------------------------------------------------------
 
-      const layer = d3.select("#graph").append("g");
-      const width = d3.select("#graph").attr("width");
-      const height = d3.select("#graph").attr("height");
+      const layer = d3.select("#graph").append("g").attr("id", "draw-layer");
+      const width = window.innerWidth * 0.8
+      const height = window.innerHeight
 
       const members = await d3.json("fixed.json");
       var nodes = members.nodes;
       let links = members.edges;
 
       let viewport = layer.append("g");
+      
       var plotZoom = d3.zoom().on("zoom", plotZoomed);
       d3.select("#graph").call(plotZoom);
 
@@ -90,7 +110,7 @@
                 // .force("link", d3.forceLink(links))
 
                                                 // if source and target don't provide array indices for nodes, .id will tell the force what to look for in the nodes when it is trying to connect things together. Provide a getter function for _node elements_
-                .force("repulse", d3.forceManyBody().strength(-7000) ) // electrostatic repulsion between all nodes to space them out
+                .force("repulse", d3.forceManyBody().strength(-2000) ) // electrostatic repulsion between all nodes to space them out
                 .force("center", d3.forceCenter(width/2.0, height/2.0)) // centering force to make sure points don't fly away completely
                 //.on("tick", render)
                 ;
@@ -100,7 +120,7 @@
         }
 
       function render() {
-        // Edges
+        // data join for edges
         let lines = viewport.selectAll("line.link").data(links)
             .join(
               enter => enter.append("line")
@@ -112,7 +132,7 @@
             .attr("x1", d => d.source.x).attr("x2", d => d.target.x)   // Using the pointers d3.forceLink provides to access node x and y coords
             .attr("y1", d => d.source.y).attr("y2", d => d.target.y);
 
-        // Nodes
+        // data join for nodes
         let circles = viewport.selectAll("circle.node").data(nodes)
               .join(
                   enter => enter.append("svg:image")
@@ -126,10 +146,10 @@
                                     return d.groups[0].replace(/\s+/g, '') + ".svg"
                                   }
                                 })
-                                .attr("width", 150)
-                                .attr("height", 150)
-                                .attr("x", -75)
-                                .attr("y", -75)
+                                .attr("width", 100)
+                                .attr("height", 100)
+                                .attr("x", -50)
+                                .attr("y", -50)
                                 // .call( d3.drag().on("start",dragstart)
                                 //                  .on("drag",dragging)
                                 //                  .on("end",dragend) )
@@ -137,10 +157,11 @@
               .attr("transform", d => `translate(${d.x},${d.y})`)
               .attr("name", d => d.name)
         
+        // handle mouseover of nodes
         circles.on("mouseover", function(event, d) { 
-
-          let connectedNames = [];
-
+          let connectedNames = []; // tracking names of nodes connected to the hovered node
+          
+          // iterating over edges to find the ones that are connected to the hovered node
           d3.selectAll("line.link").each(function(l) {
             if (d === l.source || d === l.target) {
               d3.select(this).classed('hovered-arc', true).raise()
@@ -156,12 +177,14 @@
                 return connectedNames.includes(d3.select(this).attr("name")); 
           }).raise()
 
+          // reduce opacity of unconnected nodes
           circles.filter(function() {
             return !connectedNames.includes(d3.select(this).attr("name")); 
           }).lower().classed('unconnected-node', true)
           d3.select("#small-label").text(d['name']);
         });
 
+        // handle mouseout of nodes
         circles.on("mouseout", function(event, d) {
           d3.selectAll("line.link").classed('hovered-arc', false).lower()
           d3.select("#small-label").text("");
