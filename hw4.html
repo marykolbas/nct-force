@@ -70,6 +70,18 @@
       var plotZoom = d3.zoom().on("zoom", plotZoomed);
       d3.select("#graph").call(plotZoom);
 
+      // const colorDict = {"NCT 127": "#e76f51", "NCT DREAM": "#e9c46a", "WayV": "#2a9d8f", "SuperM": "#F4A261"}
+
+      // const color = (groupList) => {
+      //   if (groupList.length == 1) {
+      //     return colorDict[groupList[0]];
+      //   } else if (groupList.length == 0) {
+      //     return "#264653";
+      //   } else {
+      //     return "multicolor"
+      //   }
+      // }
+
       console.log(nodes, links)
 
       var sim = d3.forceSimulation()
@@ -110,21 +122,44 @@
         // Nodes
         let circles = viewport.selectAll("circle.node").data(nodes)
               .join(
-                  enter => enter.append("circle")
+                  enter => enter.append("svg:image")
                                 .attr("class","node")
-                                .attr("stroke", "#333")
-                                .attr("r", 30)
-                                .attr("cx", 0)
-                                .attr("cy", 0)
-                                .attr("fill", "blue")
-                                // NOTE: Drag events work slightly different in v6 / v7 -- always check docs
-                                //  and verify which version any reference examples are using
-                                // .call( d3.drag().on("start",dragstart)
-                                //                 .on("drag",dragging)
-                                //                 .on("end",dragend) )
+                                .attr("xlink:href", (d) => {
+                                  if (d.groups.length > 1) {
+                                    return d.name.toLowerCase() + ".svg"
+                                  } else if (d.groups.length == 0) {
+                                    return "no-subunit-cropped.svg"
+                                  } else {
+                                    return d.groups[0].replace(/\s+/g, '') + ".svg"
+                                  }
+                                })
+                                .attr("width", 60)
+                                .attr("height", 60)
+                                .attr("x", -30)
+                                .attr("y", -30)
                 )
               .attr("transform", d => `translate(${d.x},${d.y})`)
-              .attr("name", d => d.name);
+              .attr("name", d => d.name)
+              
+
+              
+        // let circles = viewport.selectAll("circle.node").data(nodes)
+        //       .join(
+        //           enter => enter.append("circle")
+        //                         .attr("class","node")
+        //                         .attr("stroke", "#333")
+        //                         .attr("r", 30)
+        //                         .attr("cx", 0)
+        //                         .attr("cy", 0)
+        //                         .attr("fill", "blue")
+        //                         // NOTE: Drag events work slightly different in v6 / v7 -- always check docs
+        //                         //  and verify which version any reference examples are using
+        //                         // .call( d3.drag().on("start",dragstart)
+        //                         //                 .on("drag",dragging)
+        //                         //                 .on("end",dragend) )
+        //         )
+        //       .attr("transform", d => `translate(${d.x},${d.y})`)
+        //       .attr("name", d => d.name);
         
         circles.on("mouseover", function(event, d) { 
 
@@ -133,6 +168,7 @@
           d3.selectAll("line.link").each(function(l) {
             if (d === l.source || d === l.target) {
               d3.select(this).classed('hovered-arc', true).raise()
+              circles.raise()
 
               connectedNames.push(l.source.name);
               connectedNames.push(l.target.name);
@@ -140,14 +176,14 @@
               d3.select(this).classed('hovered-arc', false).lower();
             }
           })
-          d3.selectAll("circle.node").filter(function() {
-                return connectedNames.includes(d3.select(this).attr("name")); 
-          }).raise()
+          // d3.selectAll("circle.node").filter(function() {
+          //       return connectedNames.includes(d3.select(this).attr("name")); 
+          // }).raise()
 
-          d3.selectAll("circle.node").filter(function() {
-            return !connectedNames.includes(d3.select(this).attr("name")); 
-          }).lower()
-          d3.select("#small-label").text(d['name']);
+          // d3.selectAll("circle.node").filter(function() {
+          //   return !connectedNames.includes(d3.select(this).attr("name")); 
+          // }).lower()
+          // d3.select("#small-label").text(d['name']);
         });
 
         circles.on("mouseout", function(event, d) {
