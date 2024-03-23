@@ -3,7 +3,11 @@
     <title>INFO 4310 - HW 2</title>
     <script src="https://d3js.org/d3.v7.min.js"></script>
     <style>
+        .hovered_arc{
+            stroke: black;
+            z-index: 2;
 
+        }
     </style>
    </head>
 
@@ -14,39 +18,128 @@
     </div>
   
     <main>
-      <aside id="controls-sidebar" height="600">
-        <!-- <div id="category-filters"></div> -->
-      </aside> 
-      <div id="scatterplot-container">
-        <!-- <div id="scatterplot-legend" width="700" height="30"></div>
-        <svg id="scatterplot" width="700" height="600"></svg> -->
-      </div>
-      <aside id="detail-sidebar" height="730">
-        
-      </aside>
+        <aside id="detail-sidebar" height="730">
+            <p id="small-label"></p>
+        </aside>
+      <svg id="graph" height="900" width="1500" style="background: #sff; margin-top:50px" >
+      </svg>
+      
     </main>
   </body>
   
   <script>
 
-    const requestData = async function() {
-        const songs = await d3.csv("NCT_csv_order1.csv", d3.autoType)
-        console.log(songs)
+    const requestData = async () =>  {
+      // const songs = await d3.csv("NCT_csv_order1.csv", d3.autoType);
 
-        //convert 'Date' string into datetime 
-        var parseTime = d3.timeParse("%m/%d/%Y");
-        songs.forEach(d => {
-            d.datetime = parseTime(d.Date)
-        })
+      // //convert 'Date' string into datetime 
+      // var parseTime = d3.timeParse("%m/%d/%Y");
+      // songs.forEach(d => {
+      //     d.datetime = parseTime(d.Date)
+      // })
+      
+      // //in chronological order
+      // let songs_sorted = d3.sort(songs, (d) => d.datetime)
+
+      // --------------------------------------------------------------
+
+      const layer = d3.select("#graph").append("g");
+      const width = d3.select("#graph").attr("width");
+      const height = d3.select("#graph").attr("height");
+
+      const members = await d3.json("chord_data_order1_withoutmain_withsongs.json");
+      var nodes = members.nodes;
+      let links = members.edges;
+
+      console.log(nodes, links)
+
+      var sim = d3.forceSimulation()
+                .nodes(nodes)
+                .force("links", d3.forceLink()   // Keep nodes that are connected near each other
+                                        .links(links)           // give the force an array of source/target objects
+                                        .id( d => d['name'] )
+                                        // .strength(d=> d.weight)
+                                        // .strength (function (d) {return (d.weight)})
+                                        .strength(d => d.weight*d.weight*0.01)
+                                        // .distance(d=>console.log(d))
+                                        )
+
+                // .force("link", d3.forceLink(links))
+
+                                                // if source and target don't provide array indices for nodes, .id will tell the force what to look for in the nodes when it is trying to connect things together. Provide a getter function for _node elements_
+                .force("repulse", d3.forceManyBody().strength(-4500) ) // electrostatic repulsion between all nodes to space them out
+                .force("center", d3.forceCenter(width/2.0, height/2.0)) // centering force to make sure points don't fly away completely
+                .on("tick", render);
+
+
+      function render() {
+        // Edges
+        let lines = layer.selectAll("line.link").data(links)
+            .join(
+              enter => enter.append("line")
+                            .attr("class","link")
+                            .attr("stroke","#D3D3D3") 
+                            .attr("stroke-width", 3)
+                            .style('opacity', 0.6)
+            )
+            .attr("x1", d => d.source.x).attr("x2", d => d.target.x)   // Using the pointers d3.forceLink provides to access node x and y coords
+            .attr("y1", d => d.source.y).attr("y2", d => d.target.y);
+
+        // Nodes
+        let circles = layer.selectAll("circle.node").data(nodes)
+              .join(
+                  enter => enter.append("circle")
+                                .attr("class","node")
+                                .attr("stroke", "#333")
+                                .attr("r", 30)
+                                .attr("cx", 0)
+                                .attr("cy", 0)
+                                .attr("fill", "blue")
+                                // NOTE: Drag events work slightly different in v6 / v7 -- always check docs
+                                //  and verify which version any reference examples are using
+                                // .call( d3.drag().on("start",dragstart)
+                                //                 .on("drag",dragging)
+                                //                 .on("end",dragend) )
+                )
+              .attr("transform", d => `translate(${d.x},${d.y})`);
         
-        //in chronological order
-        let songs_sorted = d3.sort(data, (d) => d.datetime)
-        console.log(songs_sorted)
 
-        const members = await d3.json("chord_data_order1_s.json");
+        
+        
+        circles.on("mouseover", function(event, d) { 
+            lines.style('stroke', function(l) {
+                if (d === l.source || d === l.target)
+                    return "black";
+                else
+                    return "#D3D3D3";
+                })
+                .style('opacity', function(l) {
+                if (d === l.source || d === l.target)
+                    return 1;
+                else
+                    return 0.5;
+                });
+            
 
+            d3.select("#small-label").text(d['name']);
+        });
 
-    }
+        // Set the stroke width back to normal when mouse leaves the node.
+        // circles.on('mouseout', function() {
+        //     link.style('stroke', "#D3D3D3");
+        //     link.style('opacity', 0.5)
+        //     });
+        
+        }
+
+        
+
+        render();
+
+        
+        
+
+        }
 
     requestData()
 
