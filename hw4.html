@@ -13,15 +13,15 @@
 
    <body>
     <div id="headers">
-      <h1>header</h1>
+      <h1>nct force</h1>
       <!-- <h2>How many hours a day do people across the world spend on <span id="subtitle-filter">...</span>?</h2> -->
     </div>
   
     <main>
         <aside id="detail-sidebar" height="730">
-            <p id="small-label"></p>
+            <p id="small-label">filler text</p>
         </aside>
-      <svg id="graph" height="900" width="1500" style="background: #sff; margin-top:50px" >
+      <svg id="graph" height="900" width="1500">
       </svg>
       
     </main>
@@ -71,6 +71,9 @@
                 .force("center", d3.forceCenter(width/2.0, height/2.0)) // centering force to make sure points don't fly away completely
                 .on("tick", render);
 
+        while (sim.alpha() > 0.01) { 
+          sim.tick(); 
+        }
 
       function render() {
         // Edges
