@@ -62,7 +62,7 @@
       const width = d3.select("#graph").attr("width");
       const height = d3.select("#graph").attr("height");
 
-      const members = await d3.json("chord_data_order1_withoutmain_withsongs.json");
+      const members = await d3.json("fixed.json");
       var nodes = members.nodes;
       let links = members.edges;
 
@@ -91,16 +91,17 @@
                                         .id( d => d['name'] )
                                         // .strength(d=> d.weight)
                                         // .strength (function (d) {return (d.weight)})
-                                        .strength(d => d.weight*d.weight*0.01)
+                                        .strength(d => d.weight*0.01)
                                         // .distance(d=>console.log(d))
                                         )
 
                 // .force("link", d3.forceLink(links))
 
                                                 // if source and target don't provide array indices for nodes, .id will tell the force what to look for in the nodes when it is trying to connect things together. Provide a getter function for _node elements_
-                .force("repulse", d3.forceManyBody().strength(-4500) ) // electrostatic repulsion between all nodes to space them out
+                .force("repulse", d3.forceManyBody().strength(-1000) ) // electrostatic repulsion between all nodes to space them out
                 .force("center", d3.forceCenter(width/2.0, height/2.0)) // centering force to make sure points don't fly away completely
-                .on("tick", render);
+                //.on("tick", render)
+                ;
 
         while (sim.alpha() > 0.01) { 
           sim.tick(); 
@@ -137,6 +138,9 @@
                                 .attr("height", 60)
                                 .attr("x", -30)
                                 .attr("y", -30)
+                                // .call( d3.drag().on("start",dragstart)
+                                //                  .on("drag",dragging)
+                                //                  .on("end",dragend) )
                 )
               .attr("transform", d => `translate(${d.x},${d.y})`)
               .attr("name", d => d.name)
@@ -190,7 +194,8 @@
           d3.selectAll("line.link").classed('hovered-arc', false).lower()
           d3.select("#small-label").text("");
         });
-        }
+      
+      }
 
         
 
