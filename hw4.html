@@ -67,7 +67,8 @@
         </div>
 
         <aside id="detail-sidebar">
-            <p id="small-label">filler text</p>
+            <p id="name"></p>
+            <p id="groups"></p>
         </aside>
     </main>
   </body>
@@ -166,42 +167,59 @@
 
         let nodeGroups = d3.selectAll(".node"); 
         nodeGroups.on("mouseover", function(event, d) { 
-          let connectedNames = []; // tracking names of nodes connected to the hovered node
           
-          // iterating over edges to find the ones that are connected to the hovered node
-          d3.selectAll("path.link").each(function(l) {
-            if (d === l.source || d === l.target) {
-              d3.select(this).classed('hovered-arc', true).raise().attr("stroke", d === l.source ? color(l.target.groups[0]) : color(l.source.groups[0]));
-              nodeGroups.raise()
-
-              connectedNames.push(l.source.name);
-              connectedNames.push(l.target.name);
-            } else {
-              d3.select(this).classed('hovered-arc', false).lower();
-            }
-          })
-          nodeGroups.filter(function() {
-                return connectedNames.includes(d3.select(this).attr("name")); 
-          }).raise()
-
-          // reduce opacity of unconnected nodes
-          nodeGroups.filter(function() {
-            return !connectedNames.includes(d3.select(this).attr("name")); 
-          }).classed('unconnected-node', true).lower()
-          
-          d3.select("#small-label").text(d['name']);
-          d3.selectAll(".link:not(.hovered-arc)").lower()
-        });
-
-        
+          if (!d3.select("#detail-sidebar").classed("clicked")) {
+            resetNetwork();
+            highlightNetwork(d);
+            hoverUpdate(d.name);
+        }});
 
         // handle mouseout of nodes
         nodeGroups.on("mouseout", function(event, d) {
-          d3.select("#small-label").text("");
+            if (!d3.select("#detail-sidebar").classed("clicked")) {
+              clearSidebar();
+              resetNetwork();
+            }
+          });
+
+        nodeGroups.on("click", function(event, d) {
+          resetNetwork();
+          highlightNetwork(d);
+          clickUpdate(d.name);
+        });
+
+        function highlightNetwork(d) {
+          let connectedNames = []; // tracking names of nodes connected to the hovered node
+
+            // iterating over edges to find the ones that are connected to the hovered node
+            d3.selectAll("path.link").each(function(l) {
+              if (d === l.source || d === l.target) {
+                d3.select(this).classed('hovered-arc', true).raise().attr("stroke", d === l.source ? color(l.target.groups[0]) : color(l.source.groups[0]));
+                nodeGroups.raise();
+                connectedNames.push(l.source.name);
+                connectedNames.push(l.target.name);
+              } else {
+                d3.select(this).classed('hovered-arc', false).lower();
+              }
+            })
+
+            // make sure connected nodes are on top
+            nodeGroups.filter(function() {
+                  return connectedNames.includes(d3.select(this).attr("name")); 
+            }).raise()
+
+            // reduce opacity of unconnected nodes and lower under highlighted edges
+            nodeGroups.filter(function() {
+              return !connectedNames.includes(d3.select(this).attr("name")); 
+            }).classed('unconnected-node', true).lower()
+            d3.selectAll(".link:not(.hovered-arc)").lower()
+        }
+
+        function resetNetwork() {
           nodeGroups.classed('unconnected-node', false)
           d3.selectAll("path.link").classed('hovered-arc', false).lower().attr("stroke", "rgb(231, 231, 231)")
-          
-        });
+        
+        }
       
       }
       render();
@@ -253,8 +271,42 @@
         
         return container;
       }
+
+      function clickUpdate(name) {
+        d3.select("#detail-sidebar").classed("clicked", true)
+
+        let selectedNode = nodes.filter(d => {
+          if (d.name === name) {
+            return d;
+          }
+        });
+        
+        d3.select("#name").text(selectedNode[0].name);
+        d3.select("#groups").text(selectedNode[0].groups);
+       
+      }
+
+      function hoverUpdate(name) {
+        let selectedNode = nodes.filter(d => {
+          if (d.name === name) {
+            return d;
+          }
+        });
+        
+        d3.select("#name").text(selectedNode[0].name);
+        d3.select("#groups").text(selectedNode[0].groups);
+      }
+
+      function clearSidebar() {
+        if (!d3.select("#detail-sidebar").classed("clicked")) {
+          d3.select("#name").text("");
+          d3.select("#groups").text("");
+        }
+        
+      }
     }
 
+    
     requestData()
 
   </script>
