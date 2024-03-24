@@ -71,6 +71,7 @@
         font-size: 20px;
         font-weight: bold;
       }
+
       
     </style>
    </head>
@@ -87,6 +88,7 @@
               <p id="name"></p>
               <div id="groups"></div>
               <p id="position"></p>
+              <p id="totalsongs"></p>
             </div>
             <svg id="barchart" width="260" height ="300"></svg>
         </aside>
@@ -139,14 +141,13 @@
       const chartWidth = barchartWidth - margin.left - margin.right;
       const chartHeight = barchartHeight - margin.top - margin.bottom;
 
-      function makeBarChart(connections){
+      function makeBarChart(selectedNode, connections){
         let annotations = barchart.append("g").attr("id","annotations");
         let chartArea = barchart.append("g").attr("id","area")
                       .attr("transform",`translate(${margin.left},${margin.top})`);
 
         connections = d3.sort(connections, (d) => d[1]).reverse()        
         const songExtent = d3.extent(connections, d=>d[1]);
-        console.log(songExtent)
         const songScale = d3.scaleLinear().domain([0, songExtent[1]]).range([chartHeight, 0]).nice();
 
         const leftAxisTicks = songScale.ticks()
@@ -186,6 +187,21 @@
                   .attr("y", d => songScale(d[1]))
                   .attr("height", d => songScale(0) - songScale(d[1]))
                   .attr("width", membersXAxisScale.bandwidth());
+
+
+         //handle mouseover of barchart bars 
+        let barchartBars = chartArea.selectAll("rect.bar"); 
+        barchartBars.on("mouseover", function(event, d) { 
+          links.filter(e => {
+            if ((d[0] === e.target.name && e.source.name === selectedNode[0].name) || (d[0] === e.source.name && e.target.name === selectedNode[0].name)) {
+              console.log(e.sub_songs)
+              // INDEX OF ALL SONGS THEY SHARE, INDEXES CAN BE USED TO GRAB SONG DATA FROM NCT_csv_order1.csv
+              // COME BACK TO THIS TO POPULATE TABLE 
+            }
+            
+          })
+
+        });
 
       }
 
@@ -262,7 +278,6 @@
                   })
                 
         // handle mouseover of nodes
-
         let nodeGroups = d3.selectAll(".node"); 
         nodeGroups.on("mouseover", function(event, d) { 
           
@@ -285,6 +300,8 @@
           highlightNetwork(d);
           clickUpdate(d.name);
         });
+
+        
 
         function highlightNetwork(d) {
           let connectedNames = []; // tracking names of nodes connected to the hovered node
@@ -381,9 +398,8 @@
 
         d3.selectAll('#barchart g').remove()
 
-        makeBarChart(selectedNode[0].connections)
+        makeBarChart(selectedNode, selectedNode[0].connections)
              
-        console.log(selectedNode[0].groups)
         d3.select("#name").text(selectedNode[0].name);
 
         //clear initial bubbles 
@@ -398,6 +414,8 @@
         // d3.select("#groups").text(selectedNode[0].groups);
 
         d3.select("#position").text(`Position: ${member_details[selectedNode[0].index].position}`)
+
+        d3.select("#totalsongs").text(`Total songs in dataset: ${selectedNode[0].weight}`)
       }
 
       function hoverUpdate(name) {
@@ -419,6 +437,8 @@
         
       }
     }
+
+    
 
     
     requestData()
