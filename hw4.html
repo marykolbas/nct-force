@@ -55,6 +55,22 @@
       .node-label:hover, .node:hover{
         cursor: pointer;
       }
+
+      /* styling for sidebar */
+      .group_bubble{
+        border-style: solid;
+        border-radius: 5px;
+        margin:5px;
+        padding: 5px;
+        display: inline-block;
+      }
+      #detail-sidebar-div{
+        margin-left: 20px;
+      }
+      #name{
+        font-size: 20px;
+        font-weight: bold;
+      }
       
     </style>
    </head>
@@ -67,8 +83,12 @@
         </div>
 
         <aside id="detail-sidebar">
-            <p id="name"></p>
-            <p id="groups"></p>
+            <div id="detail-sidebar-div">
+              <p id="name"></p>
+              <div id="groups"></div>
+              <p id="position"></p>
+            </div>
+            <svg id="barchart" width="260" height ="300"></svg>
         </aside>
     </main>
   </body>
@@ -76,16 +96,20 @@
   <script>
 
     const requestData = async () =>  {
-      // const songs = await d3.csv("NCT_csv_order1.csv", d3.autoType);
+      const songs = await d3.csv("NCT_csv_order1.csv", d3.autoType);
 
-      // //convert 'Date' string into datetime 
-      // var parseTime = d3.timeParse("%m/%d/%Y");
-      // songs.forEach(d => {
-      //     d.datetime = parseTime(d.Date)
-      // })
+      //convert 'Date' string into datetime 
+      var parseTime = d3.timeParse("%m/%d/%Y");
+      songs.forEach(d => {
+          d.datetime = parseTime(d.Date)
+      })
       
-      // //in chronological order
-      // let songs_sorted = d3.sort(songs, (d) => d.datetime)
+      //in chronological order
+      let songs_sorted = d3.sort(songs, (d) => d.datetime)
+
+      const member_details = await d3.csv("members_unique_subunits.csv");
+      
+      
 
       // --------------------------------------------------------------
 
@@ -106,6 +130,80 @@
       d3.select("#graph").call(plotZoom);
 
       console.log(nodes, links)
+
+      // bar chart ------------------------------------------------------------------
+      const barchart = d3.select("svg#barchart");
+      const barchartWidth = barchart.attr("width");
+      const barchartHeight = barchart.attr("height");
+      const margin = {top: 10, right: 10, bottom: 70, left: 50};
+      const chartWidth = barchartWidth - margin.left - margin.right;
+      const chartHeight = barchartHeight - margin.top - margin.bottom;
+
+      function makeBarChart(connections){
+        let annotations = barchart.append("g").attr("id","annotations");
+        let chartArea = barchart.append("g").attr("id","area")
+                      .attr("transform",`translate(${margin.left},${margin.top})`);
+
+        connections = d3.sort(connections, (d) => d[1]).reverse()        
+        const songExtent = d3.extent(connections, d=>d[1]);
+        console.log(songExtent)
+        const songScale = d3.scaleLinear().domain([0, songExtent[1]]).range([chartHeight, 0]).nice();
+
+        const leftAxisTicks = songScale.ticks()
+                                  .filter(tick => Number.isInteger(tick));
+
+        let leftAxis = d3.axisLeft(songScale).tickFormat(d3.format('d')).tickValues(leftAxisTicks);
+        let leftGridlines = d3.axisLeft(songScale)
+                              .tickSize(-chartWidth-10)
+                              .tickFormat("").tickValues(leftAxisTicks)
+        annotations.append("g")
+                  .attr("class", "y axis")
+                  .attr("transform",`translate(${margin.left-10},${margin.top})`)
+                  .call(leftAxis)
+        annotations.append("g")
+                  .attr("class", "y gridlines")
+                  .attr("transform",`translate(${margin.left-10},${margin.top})`)
+                  .call(leftGridlines);
+    
+        const membersXAxis = d3.map(connections, d => d[0]) 
+        const membersXAxisScale = d3.scaleBand().domain(membersXAxis).range([0, chartWidth])
+                                         .padding(0.05);
+
+        let bottomAxis = d3.axisBottom(membersXAxisScale)
+        annotations.append("g")
+                  .attr("class", "x axis")
+                  .attr("transform",`translate(${margin.left},${chartHeight+margin.top+10})`)
+                  .call(bottomAxis)
+                  .selectAll('text')
+                        .style("text-anchor", "end")
+                        .attr("dx", "-.8em")
+                        .attr("dy", ".15em").attr("transform", "rotate(-65)")
+        
+        chartArea.selectAll('rect.bar').data(connections)
+                  .join('rect').attr('class','bar')
+                  .attr("fill", "steelblue")
+                  .attr("x", d => membersXAxisScale(d[0]))
+                  .attr("y", d => songScale(d[1]))
+                  .attr("height", d => songScale(0) - songScale(d[1]))
+                  .attr("width", membersXAxisScale.bandwidth());
+
+      }
+
+
+      // create list of # of songs each node shares with others as "connections"
+      nodes.forEach(n=>{ 
+        node_collab = []  
+        links.forEach(l=>{
+          if(n.name===l.source){
+            node_collab.push([l.target, l.weight])
+          }
+          if(n.name===l.target){
+            node_collab.push([l.source, l.weight])
+          }
+        })
+        n.connections=node_collab
+      })
+      console.log("new", nodes)
 
       var sim = d3.forceSimulation()
                 .nodes(nodes)
@@ -280,10 +378,26 @@
             return d;
           }
         });
-        
+
+        d3.selectAll('#barchart g').remove()
+
+        makeBarChart(selectedNode[0].connections)
+             
+        console.log(selectedNode[0].groups)
         d3.select("#name").text(selectedNode[0].name);
-        d3.select("#groups").text(selectedNode[0].groups);
-       
+
+        //clear initial bubbles 
+        d3.selectAll('#groups g').remove()
+        //add new bubbles
+        selectedNode[0].groups.forEach(d=>{
+          d3.select("#groups").append('g')
+                              .attr('class', 'group_bubble')
+                              .text(d)
+                              .style('background-color', color(d))
+        })
+        // d3.select("#groups").text(selectedNode[0].groups);
+
+        d3.select("#position").text(`Position: ${member_details[selectedNode[0].index].position}`)
       }
 
       function hoverUpdate(name) {
@@ -294,7 +408,7 @@
         });
         
         d3.select("#name").text(selectedNode[0].name);
-        d3.select("#groups").text(selectedNode[0].groups);
+        // d3.select("#groups").text(selectedNode[0].groups);
       }
 
       function clearSidebar() {
