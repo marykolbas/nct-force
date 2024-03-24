@@ -37,6 +37,10 @@
         border-left: solid 1px lightgray;
       }
 
+      p{
+        margin: 5px;
+      }
+
       /* -- styling force diagram elements -- */
       .hovered-arc {
         /* stroke: black; */
@@ -72,6 +76,34 @@
         font-weight: bold;
       }
 
+      /* styling for song table */
+      .theads{
+        position: sticky;
+        top:0;
+        background-color: white;
+        position: -webkit-sticky;
+        z-index: 999;
+      }
+      th, td{
+        font-size: 9px;
+      }
+      tr{
+        border: solid thin
+      }
+      
+      table {
+        display: block;
+        height: 230px;
+        overflow-y: scroll;
+        margin:5px;
+        border-collapse: collapse; 
+      }
+      #tabletitle{
+        margin-left: 10px;
+        font-size: 15px;
+      }
+      
+
       
     </style>
    </head>
@@ -91,6 +123,8 @@
               <p id="totalsongs"></p>
             </div>
             <svg id="barchart" width="260" height ="300"></svg>
+            <div id="tabletitle"></div>
+            <div id="song_table_container"></div>
         </aside>
     </main>
   </body>
@@ -107,7 +141,7 @@
       })
       
       //in chronological order
-      let songs_sorted = d3.sort(songs, (d) => d.datetime)
+      const songs_sorted = d3.sort(songs, (d) => d.datetime)
 
       const member_details = await d3.csv("members_unique_subunits.csv");
       
@@ -192,16 +226,25 @@
          //handle mouseover of barchart bars 
         let barchartBars = chartArea.selectAll("rect.bar"); 
         barchartBars.on("mouseover", function(event, d) { 
+          d3.select(this).style("fill", "red")
           links.filter(e => {
             if ((d[0] === e.target.name && e.source.name === selectedNode[0].name) || (d[0] === e.source.name && e.target.name === selectedNode[0].name)) {
               console.log(e.sub_songs)
-              // INDEX OF ALL SONGS THEY SHARE, INDEXES CAN BE USED TO GRAB SONG DATA FROM NCT_csv_order1.csv
-              // COME BACK TO THIS TO POPULATE TABLE 
+
+              removeTable(); //remove the old table
+              d3.select('#tabletitle').text(`Songs ${d3.select('#name').text()} shares with ${d[0]}`)
+              updateSongTable(e.sub_songs)
+              
+              
             }
             
           })
 
         });
+        //handle mouseout of barchart bars
+        barchartBars.on('mouseout', function(event, d){
+          d3.select(this).style("fill", "steelblue")
+        })
 
       }
 
@@ -274,7 +317,12 @@
 
                       nodeGroup.each(function(d) {
                           createNodeDonut(d3.select(this), d.groups);
+                          if(d.groups.length==0){
+                            createNodeDonut(d3.select(this), ['none'])
+                          }
                       });
+                      
+
                   })
                 
         // handle mouseover of nodes
@@ -299,6 +347,8 @@
           resetNetwork();
           highlightNetwork(d);
           clickUpdate(d.name);
+          removeTable();
+
         });
 
         
@@ -364,7 +414,7 @@
 
         arcPaths.append("path")
             .attr("d", arc)
-            .attr("fill", (d, i) => color(d.data));
+            .attr("fill", (d, i) => d.data == ['none'] ? 'black' : color(d.data));
 
         container.append("circle")
             .attr("cx", 0)
@@ -416,6 +466,9 @@
         d3.select("#position").text(`Position: ${member_details[selectedNode[0].index].position}`)
 
         d3.select("#totalsongs").text(`Total songs in dataset: ${selectedNode[0].weight}`)
+
+        
+
       }
 
       function hoverUpdate(name) {
@@ -434,8 +487,57 @@
           d3.select("#name").text("");
           d3.select("#groups").text("");
         }
-        
       }
+
+      //remove barchart hover table 
+      function removeTable(){
+        d3.select('#song_table_container div').remove()
+        d3.select('#song_table_container table').remove()
+        d3.select('#tabletitle').text("")
+      }
+
+      function updateSongTable(shared_songs){
+        // source: https://gist.github.com/jfreels/6733593
+
+        //set up the table
+        let song_table_container = d3.select("#song_table_container")
+        let table = song_table_container.append('table')
+        let thead = table.append('thead')
+        let	tbody = table.append('tbody');
+
+        columns = ['Song Title', 'Date', 'Group', 'Album Name', 'Release Type', 'Number Members']
+        thead.append('tr')
+              .selectAll('th')
+              .data(columns).enter()
+              .append('th')
+                .text(function (column) { return column; });
+
+        //get the shared_song details based on the parameter that has only the indexes 
+        shared_songs_detailed = []
+        shared_songs.forEach(i=>{
+          shared_songs_detailed.push(songs_sorted[i])
+        })
+
+        //use shared_songs_detailed to populate the table 
+        var rows = tbody.selectAll('tr')
+                        .data(shared_songs_detailed)
+                        .enter()
+                        .append('tr');
+
+        
+        var cells = rows.selectAll('td')
+                        .data(function (row) {
+                          return columns.map(function (column) {
+                            return {column: column, value: row[column]};
+                          });
+                        })
+                        .enter()
+                        .append('td')
+                          .text(function (d) { return d.value; });
+                                        
+
+        }
+
     }
 
     
