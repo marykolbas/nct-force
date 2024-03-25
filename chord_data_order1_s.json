@@ -1,0 +1,4218 @@
+{
+  "nodes": [
+    {
+      "name": "Taeil",
+      "weight": 119,
+      "groups": [
+        "NCT 127"
+      ]
+    },
+    {
+      "name": "Johnny",
+      "weight": 99,
+      "groups": [
+        "NCT 127"
+      ]
+    },
+    {
+      "name": "Taeyong",
+      "weight": 138,
+      "groups": [
+        "NCT 127",
+        "SuperM"
+      ]
+    },
+    {
+      "name": "Yuta",
+      "weight": 109,
+      "groups": [
+        "NCT 127"
+      ]
+    },
+    {
+      "name": "Doyoung",
+      "weight": 120,
+      "groups": [
+        "NCT 127"
+      ]
+    },
+    {
+      "name": "Jaehyun",
+      "weight": 119,
+      "groups": [
+        "NCT 127"
+      ]
+    },
+    {
+      "name": "Jungwoo",
+      "weight": 85,
+      "groups": [
+        "NCT 127"
+      ]
+    },
+    {
+      "name": "Winwin",
+      "weight": 75,
+      "groups": [
+        "NCT 127",
+        "WayV"
+      ]
+    },
+    {
+      "name": "Kun",
+      "weight": 52,
+      "groups": [
+        "WayV"
+      ]
+    },
+    {
+      "name": "Ten",
+      "weight": 70,
+      "groups": [
+        "WayV",
+        "SuperM"
+      ]
+    },
+    {
+      "name": "Lucas",
+      "weight": 59,
+      "groups": [
+        "WayV",
+        "SuperM"
+      ]
+    },
+    {
+      "name": "Xiaojun",
+      "weight": 49,
+      "groups": [
+        "WayV"
+      ]
+    },
+    {
+      "name": "Hendery",
+      "weight": 47,
+      "groups": [
+        "WayV"
+      ]
+    },
+    {
+      "name": "Yangyang",
+      "weight": 49,
+      "groups": [
+        "WayV"
+      ]
+    },
+    {
+      "name": "Shotaro",
+      "weight": 9,
+      "groups": []
+    },
+    {
+      "name": "Sungchan",
+      "weight": 8,
+      "groups": []
+    },
+    {
+      "name": "Renjun",
+      "weight": 79,
+      "groups": [
+        "NCT DREAM"
+      ]
+    },
+    {
+      "name": "Jeno",
+      "weight": 79,
+      "groups": [
+        "NCT DREAM"
+      ]
+    },
+    {
+      "name": "Jaemin",
+      "weight": 69,
+      "groups": [
+        "NCT DREAM"
+      ]
+    },
+    {
+      "name": "Chenle",
+      "weight": 81,
+      "groups": [
+        "NCT DREAM"
+      ]
+    },
+    {
+      "name": "Jisung",
+      "weight": 79,
+      "groups": [
+        "NCT DREAM"
+      ]
+    },
+    {
+      "name": "Mark",
+      "weight": 193,
+      "groups": [
+        "NCT 127",
+        "NCT DREAM",
+        "SuperM"
+      ]
+    },
+    {
+      "name": "Haechan",
+      "weight": 179,
+      "groups": [
+        "NCT 127",
+        "NCT DREAM"
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "source": "Taeil",
+      "target": "Johnny",
+      "weight": 94,
+      "weight_prop": 0.7899159663865546,
+      "sourceIndex": 0,
+      "targetIndex": 1
+    },
+    {
+      "source": "Taeil",
+      "target": "Taeyong",
+      "weight": 101,
+      "weight_prop": 0.8487394957983193,
+      "sourceIndex": 0,
+      "targetIndex": 2
+    },
+    {
+      "source": "Taeil",
+      "target": "Yuta",
+      "weight": 103,
+      "weight_prop": 0.865546218487395,
+      "sourceIndex": 0,
+      "targetIndex": 3
+    },
+    {
+      "source": "Taeil",
+      "target": "Doyoung",
+      "weight": 106,
+      "weight_prop": 0.8907563025210085,
+      "sourceIndex": 0,
+      "targetIndex": 4
+    },
+    {
+      "source": "Taeil",
+      "target": "Jaehyun",
+      "weight": 108,
+      "weight_prop": 0.907563025210084,
+      "sourceIndex": 0,
+      "targetIndex": 5
+    },
+    {
+      "source": "Taeil",
+      "target": "Jungwoo",
+      "weight": 76,
+      "weight_prop": 0.6386554621848739,
+      "sourceIndex": 0,
+      "targetIndex": 6
+    },
+    {
+      "source": "Taeil",
+      "target": "Winwin",
+      "weight": 35,
+      "weight_prop": 0.29411764705882354,
+      "sourceIndex": 0,
+      "targetIndex": 7
+    },
+    {
+      "source": "Taeil",
+      "target": "Kun",
+      "weight": 9,
+      "weight_prop": 0.07563025210084033,
+      "sourceIndex": 0,
+      "targetIndex": 8
+    },
+    {
+      "source": "Taeil",
+      "target": "Ten",
+      "weight": 5,
+      "weight_prop": 0.04201680672268908,
+      "sourceIndex": 0,
+      "targetIndex": 9
+    },
+    {
+      "source": "Taeil",
+      "target": "Lucas",
+      "weight": 3,
+      "weight_prop": 0.025210084033613446,
+      "sourceIndex": 0,
+      "targetIndex": 10
+    },
+    {
+      "source": "Taeil",
+      "target": "Xiaojun",
+      "weight": 6,
+      "weight_prop": 0.05042016806722689,
+      "sourceIndex": 0,
+      "targetIndex": 11
+    },
+    {
+      "source": "Taeil",
+      "target": "Hendery",
+      "weight": 3,
+      "weight_prop": 0.025210084033613446,
+      "sourceIndex": 0,
+      "targetIndex": 12
+    },
+    {
+      "source": "Taeil",
+      "target": "Yangyang",
+      "weight": 3,
+      "weight_prop": 0.025210084033613446,
+      "sourceIndex": 0,
+      "targetIndex": 13
+    },
+    {
+      "source": "Taeil",
+      "target": "Shotaro",
+      "weight": 2,
+      "weight_prop": 0.01680672268907563,
+      "sourceIndex": 0,
+      "targetIndex": 14
+    },
+    {
+      "source": "Taeil",
+      "target": "Sungchan",
+      "weight": 3,
+      "weight_prop": 0.025210084033613446,
+      "sourceIndex": 0,
+      "targetIndex": 15
+    },
+    {
+      "source": "Taeil",
+      "target": "Renjun",
+      "weight": 8,
+      "weight_prop": 0.06722689075630252,
+      "sourceIndex": 0,
+      "targetIndex": 16
+    },
+    {
+      "source": "Taeil",
+      "target": "Jeno",
+      "weight": 3,
+      "weight_prop": 0.025210084033613446,
+      "sourceIndex": 0,
+      "targetIndex": 17
+    },
+    {
+      "source": "Taeil",
+      "target": "Jaemin",
+      "weight": 3,
+      "weight_prop": 0.025210084033613446,
+      "sourceIndex": 0,
+      "targetIndex": 18
+    },
+    {
+      "source": "Taeil",
+      "target": "Chenle",
+      "weight": 7,
+      "weight_prop": 0.058823529411764705,
+      "sourceIndex": 0,
+      "targetIndex": 19
+    },
+    {
+      "source": "Taeil",
+      "target": "Jisung",
+      "weight": 5,
+      "weight_prop": 0.04201680672268908,
+      "sourceIndex": 0,
+      "targetIndex": 20
+    },
+    {
+      "source": "Taeil",
+      "target": "Mark",
+      "weight": 100,
+      "weight_prop": 0.8403361344537815,
+      "sourceIndex": 0,
+      "targetIndex": 21
+    },
+    {
+      "source": "Taeil",
+      "target": "Haechan",
+      "weight": 106,
+      "weight_prop": 0.8907563025210085,
+      "sourceIndex": 0,
+      "targetIndex": 22
+    },
+    {
+      "source": "Johnny",
+      "target": "Taeil",
+      "weight": 94,
+      "weight_prop": 0.9494949494949495,
+      "sourceIndex": 1,
+      "targetIndex": 0
+    },
+    {
+      "source": "Johnny",
+      "target": "Taeyong",
+      "weight": 91,
+      "weight_prop": 0.9191919191919192,
+      "sourceIndex": 1,
+      "targetIndex": 2
+    },
+    {
+      "source": "Johnny",
+      "target": "Yuta",
+      "weight": 97,
+      "weight_prop": 0.9797979797979798,
+      "sourceIndex": 1,
+      "targetIndex": 3
+    },
+    {
+      "source": "Johnny",
+      "target": "Doyoung",
+      "weight": 92,
+      "weight_prop": 0.9292929292929293,
+      "sourceIndex": 1,
+      "targetIndex": 4
+    },
+    {
+      "source": "Johnny",
+      "target": "Jaehyun",
+      "weight": 92,
+      "weight_prop": 0.9292929292929293,
+      "sourceIndex": 1,
+      "targetIndex": 5
+    },
+    {
+      "source": "Johnny",
+      "target": "Jungwoo",
+      "weight": 77,
+      "weight_prop": 0.7777777777777778,
+      "sourceIndex": 1,
+      "targetIndex": 6
+    },
+    {
+      "source": "Johnny",
+      "target": "Winwin",
+      "weight": 30,
+      "weight_prop": 0.30303030303030304,
+      "sourceIndex": 1,
+      "targetIndex": 7
+    },
+    {
+      "source": "Johnny",
+      "target": "Kun",
+      "weight": 4,
+      "weight_prop": 0.04040404040404041,
+      "sourceIndex": 1,
+      "targetIndex": 8
+    },
+    {
+      "source": "Johnny",
+      "target": "Ten",
+      "weight": 5,
+      "weight_prop": 0.050505050505050504,
+      "sourceIndex": 1,
+      "targetIndex": 9
+    },
+    {
+      "source": "Johnny",
+      "target": "Lucas",
+      "weight": 3,
+      "weight_prop": 0.030303030303030304,
+      "sourceIndex": 1,
+      "targetIndex": 10
+    },
+    {
+      "source": "Johnny",
+      "target": "Xiaojun",
+      "weight": 3,
+      "weight_prop": 0.030303030303030304,
+      "sourceIndex": 1,
+      "targetIndex": 11
+    },
+    {
+      "source": "Johnny",
+      "target": "Hendery",
+      "weight": 6,
+      "weight_prop": 0.06060606060606061,
+      "sourceIndex": 1,
+      "targetIndex": 12
+    },
+    {
+      "source": "Johnny",
+      "target": "Yangyang",
+      "weight": 4,
+      "weight_prop": 0.04040404040404041,
+      "sourceIndex": 1,
+      "targetIndex": 13
+    },
+    {
+      "source": "Johnny",
+      "target": "Shotaro",
+      "weight": 3,
+      "weight_prop": 0.030303030303030304,
+      "sourceIndex": 1,
+      "targetIndex": 14
+    },
+    {
+      "source": "Johnny",
+      "target": "Sungchan",
+      "weight": 4,
+      "weight_prop": 0.04040404040404041,
+      "sourceIndex": 1,
+      "targetIndex": 15
+    },
+    {
+      "source": "Johnny",
+      "target": "Renjun",
+      "weight": 5,
+      "weight_prop": 0.050505050505050504,
+      "sourceIndex": 1,
+      "targetIndex": 16
+    },
+    {
+      "source": "Johnny",
+      "target": "Jeno",
+      "weight": 5,
+      "weight_prop": 0.050505050505050504,
+      "sourceIndex": 1,
+      "targetIndex": 17
+    },
+    {
+      "source": "Johnny",
+      "target": "Jaemin",
+      "weight": 6,
+      "weight_prop": 0.06060606060606061,
+      "sourceIndex": 1,
+      "targetIndex": 18
+    },
+    {
+      "source": "Johnny",
+      "target": "Chenle",
+      "weight": 5,
+      "weight_prop": 0.050505050505050504,
+      "sourceIndex": 1,
+      "targetIndex": 19
+    },
+    {
+      "source": "Johnny",
+      "target": "Jisung",
+      "weight": 7,
+      "weight_prop": 0.0707070707070707,
+      "sourceIndex": 1,
+      "targetIndex": 20
+    },
+    {
+      "source": "Johnny",
+      "target": "Mark",
+      "weight": 92,
+      "weight_prop": 0.9292929292929293,
+      "sourceIndex": 1,
+      "targetIndex": 21
+    },
+    {
+      "source": "Johnny",
+      "target": "Haechan",
+      "weight": 91,
+      "weight_prop": 0.9191919191919192,
+      "sourceIndex": 1,
+      "targetIndex": 22
+    },
+    {
+      "source": "Taeyong",
+      "target": "Taeil",
+      "weight": 101,
+      "weight_prop": 0.7318840579710145,
+      "sourceIndex": 2,
+      "targetIndex": 0
+    },
+    {
+      "source": "Taeyong",
+      "target": "Johnny",
+      "weight": 91,
+      "weight_prop": 0.6594202898550725,
+      "sourceIndex": 2,
+      "targetIndex": 1
+    },
+    {
+      "source": "Taeyong",
+      "target": "Yuta",
+      "weight": 100,
+      "weight_prop": 0.7246376811594203,
+      "sourceIndex": 2,
+      "targetIndex": 3
+    },
+    {
+      "source": "Taeyong",
+      "target": "Doyoung",
+      "weight": 103,
+      "weight_prop": 0.7463768115942029,
+      "sourceIndex": 2,
+      "targetIndex": 4
+    },
+    {
+      "source": "Taeyong",
+      "target": "Jaehyun",
+      "weight": 105,
+      "weight_prop": 0.7608695652173914,
+      "sourceIndex": 2,
+      "targetIndex": 5
+    },
+    {
+      "source": "Taeyong",
+      "target": "Jungwoo",
+      "weight": 74,
+      "weight_prop": 0.5362318840579711,
+      "sourceIndex": 2,
+      "targetIndex": 6
+    },
+    {
+      "source": "Taeyong",
+      "target": "Winwin",
+      "weight": 36,
+      "weight_prop": 0.2608695652173913,
+      "sourceIndex": 2,
+      "targetIndex": 7
+    },
+    {
+      "source": "Taeyong",
+      "target": "Kun",
+      "weight": 4,
+      "weight_prop": 0.028985507246376812,
+      "sourceIndex": 2,
+      "targetIndex": 8
+    },
+    {
+      "source": "Taeyong",
+      "target": "Ten",
+      "weight": 26,
+      "weight_prop": 0.18840579710144928,
+      "sourceIndex": 2,
+      "targetIndex": 9
+    },
+    {
+      "source": "Taeyong",
+      "target": "Lucas",
+      "weight": 27,
+      "weight_prop": 0.1956521739130435,
+      "sourceIndex": 2,
+      "targetIndex": 10
+    },
+    {
+      "source": "Taeyong",
+      "target": "Xiaojun",
+      "weight": 4,
+      "weight_prop": 0.028985507246376812,
+      "sourceIndex": 2,
+      "targetIndex": 11
+    },
+    {
+      "source": "Taeyong",
+      "target": "Hendery",
+      "weight": 4,
+      "weight_prop": 0.028985507246376812,
+      "sourceIndex": 2,
+      "targetIndex": 12
+    },
+    {
+      "source": "Taeyong",
+      "target": "Yangyang",
+      "weight": 6,
+      "weight_prop": 0.043478260869565216,
+      "sourceIndex": 2,
+      "targetIndex": 13
+    },
+    {
+      "source": "Taeyong",
+      "target": "Shotaro",
+      "weight": 5,
+      "weight_prop": 0.036231884057971016,
+      "sourceIndex": 2,
+      "targetIndex": 14
+    },
+    {
+      "source": "Taeyong",
+      "target": "Sungchan",
+      "weight": 4,
+      "weight_prop": 0.028985507246376812,
+      "sourceIndex": 2,
+      "targetIndex": 15
+    },
+    {
+      "source": "Taeyong",
+      "target": "Renjun",
+      "weight": 2,
+      "weight_prop": 0.014492753623188406,
+      "sourceIndex": 2,
+      "targetIndex": 16
+    },
+    {
+      "source": "Taeyong",
+      "target": "Jeno",
+      "weight": 6,
+      "weight_prop": 0.043478260869565216,
+      "sourceIndex": 2,
+      "targetIndex": 17
+    },
+    {
+      "source": "Taeyong",
+      "target": "Jaemin",
+      "weight": 5,
+      "weight_prop": 0.036231884057971016,
+      "sourceIndex": 2,
+      "targetIndex": 18
+    },
+    {
+      "source": "Taeyong",
+      "target": "Chenle",
+      "weight": 3,
+      "weight_prop": 0.021739130434782608,
+      "sourceIndex": 2,
+      "targetIndex": 19
+    },
+    {
+      "source": "Taeyong",
+      "target": "Jisung",
+      "weight": 4,
+      "weight_prop": 0.028985507246376812,
+      "sourceIndex": 2,
+      "targetIndex": 20
+    },
+    {
+      "source": "Taeyong",
+      "target": "Mark",
+      "weight": 130,
+      "weight_prop": 0.9420289855072463,
+      "sourceIndex": 2,
+      "targetIndex": 21
+    },
+    {
+      "source": "Taeyong",
+      "target": "Haechan",
+      "weight": 97,
+      "weight_prop": 0.7028985507246377,
+      "sourceIndex": 2,
+      "targetIndex": 22
+    },
+    {
+      "source": "Yuta",
+      "target": "Taeil",
+      "weight": 103,
+      "weight_prop": 0.944954128440367,
+      "sourceIndex": 3,
+      "targetIndex": 0
+    },
+    {
+      "source": "Yuta",
+      "target": "Johnny",
+      "weight": 97,
+      "weight_prop": 0.8899082568807339,
+      "sourceIndex": 3,
+      "targetIndex": 1
+    },
+    {
+      "source": "Yuta",
+      "target": "Taeyong",
+      "weight": 100,
+      "weight_prop": 0.9174311926605505,
+      "sourceIndex": 3,
+      "targetIndex": 2
+    },
+    {
+      "source": "Yuta",
+      "target": "Doyoung",
+      "weight": 95,
+      "weight_prop": 0.8715596330275229,
+      "sourceIndex": 3,
+      "targetIndex": 4
+    },
+    {
+      "source": "Yuta",
+      "target": "Jaehyun",
+      "weight": 100,
+      "weight_prop": 0.9174311926605505,
+      "sourceIndex": 3,
+      "targetIndex": 5
+    },
+    {
+      "source": "Yuta",
+      "target": "Jungwoo",
+      "weight": 78,
+      "weight_prop": 0.7155963302752294,
+      "sourceIndex": 3,
+      "targetIndex": 6
+    },
+    {
+      "source": "Yuta",
+      "target": "Winwin",
+      "weight": 35,
+      "weight_prop": 0.3211009174311927,
+      "sourceIndex": 3,
+      "targetIndex": 7
+    },
+    {
+      "source": "Yuta",
+      "target": "Kun",
+      "weight": 6,
+      "weight_prop": 0.05504587155963303,
+      "sourceIndex": 3,
+      "targetIndex": 8
+    },
+    {
+      "source": "Yuta",
+      "target": "Ten",
+      "weight": 6,
+      "weight_prop": 0.05504587155963303,
+      "sourceIndex": 3,
+      "targetIndex": 9
+    },
+    {
+      "source": "Yuta",
+      "target": "Lucas",
+      "weight": 4,
+      "weight_prop": 0.03669724770642202,
+      "sourceIndex": 3,
+      "targetIndex": 10
+    },
+    {
+      "source": "Yuta",
+      "target": "Xiaojun",
+      "weight": 3,
+      "weight_prop": 0.027522935779816515,
+      "sourceIndex": 3,
+      "targetIndex": 11
+    },
+    {
+      "source": "Yuta",
+      "target": "Hendery",
+      "weight": 6,
+      "weight_prop": 0.05504587155963303,
+      "sourceIndex": 3,
+      "targetIndex": 12
+    },
+    {
+      "source": "Yuta",
+      "target": "Yangyang",
+      "weight": 3,
+      "weight_prop": 0.027522935779816515,
+      "sourceIndex": 3,
+      "targetIndex": 13
+    },
+    {
+      "source": "Yuta",
+      "target": "Shotaro",
+      "weight": 3,
+      "weight_prop": 0.027522935779816515,
+      "sourceIndex": 3,
+      "targetIndex": 14
+    },
+    {
+      "source": "Yuta",
+      "target": "Sungchan",
+      "weight": 2,
+      "weight_prop": 0.01834862385321101,
+      "sourceIndex": 3,
+      "targetIndex": 15
+    },
+    {
+      "source": "Yuta",
+      "target": "Renjun",
+      "weight": 6,
+      "weight_prop": 0.05504587155963303,
+      "sourceIndex": 3,
+      "targetIndex": 16
+    },
+    {
+      "source": "Yuta",
+      "target": "Jeno",
+      "weight": 5,
+      "weight_prop": 0.045871559633027525,
+      "sourceIndex": 3,
+      "targetIndex": 17
+    },
+    {
+      "source": "Yuta",
+      "target": "Jaemin",
+      "weight": 5,
+      "weight_prop": 0.045871559633027525,
+      "sourceIndex": 3,
+      "targetIndex": 18
+    },
+    {
+      "source": "Yuta",
+      "target": "Chenle",
+      "weight": 7,
+      "weight_prop": 0.06422018348623854,
+      "sourceIndex": 3,
+      "targetIndex": 19
+    },
+    {
+      "source": "Yuta",
+      "target": "Jisung",
+      "weight": 7,
+      "weight_prop": 0.06422018348623854,
+      "sourceIndex": 3,
+      "targetIndex": 20
+    },
+    {
+      "source": "Yuta",
+      "target": "Mark",
+      "weight": 100,
+      "weight_prop": 0.9174311926605505,
+      "sourceIndex": 3,
+      "targetIndex": 21
+    },
+    {
+      "source": "Yuta",
+      "target": "Haechan",
+      "weight": 100,
+      "weight_prop": 0.9174311926605505,
+      "sourceIndex": 3,
+      "targetIndex": 22
+    },
+    {
+      "source": "Doyoung",
+      "target": "Taeil",
+      "weight": 106,
+      "weight_prop": 0.8833333333333333,
+      "sourceIndex": 4,
+      "targetIndex": 0
+    },
+    {
+      "source": "Doyoung",
+      "target": "Johnny",
+      "weight": 92,
+      "weight_prop": 0.7666666666666667,
+      "sourceIndex": 4,
+      "targetIndex": 1
+    },
+    {
+      "source": "Doyoung",
+      "target": "Taeyong",
+      "weight": 103,
+      "weight_prop": 0.8583333333333333,
+      "sourceIndex": 4,
+      "targetIndex": 2
+    },
+    {
+      "source": "Doyoung",
+      "target": "Yuta",
+      "weight": 95,
+      "weight_prop": 0.7916666666666666,
+      "sourceIndex": 4,
+      "targetIndex": 3
+    },
+    {
+      "source": "Doyoung",
+      "target": "Jaehyun",
+      "weight": 104,
+      "weight_prop": 0.8666666666666667,
+      "sourceIndex": 4,
+      "targetIndex": 5
+    },
+    {
+      "source": "Doyoung",
+      "target": "Jungwoo",
+      "weight": 77,
+      "weight_prop": 0.6416666666666667,
+      "sourceIndex": 4,
+      "targetIndex": 6
+    },
+    {
+      "source": "Doyoung",
+      "target": "Winwin",
+      "weight": 32,
+      "weight_prop": 0.26666666666666666,
+      "sourceIndex": 4,
+      "targetIndex": 7
+    },
+    {
+      "source": "Doyoung",
+      "target": "Kun",
+      "weight": 7,
+      "weight_prop": 0.058333333333333334,
+      "sourceIndex": 4,
+      "targetIndex": 8
+    },
+    {
+      "source": "Doyoung",
+      "target": "Ten",
+      "weight": 3,
+      "weight_prop": 0.025,
+      "sourceIndex": 4,
+      "targetIndex": 9
+    },
+    {
+      "source": "Doyoung",
+      "target": "Lucas",
+      "weight": 8,
+      "weight_prop": 0.06666666666666667,
+      "sourceIndex": 4,
+      "targetIndex": 10
+    },
+    {
+      "source": "Doyoung",
+      "target": "Xiaojun",
+      "weight": 6,
+      "weight_prop": 0.05,
+      "sourceIndex": 4,
+      "targetIndex": 11
+    },
+    {
+      "source": "Doyoung",
+      "target": "Hendery",
+      "weight": 2,
+      "weight_prop": 0.016666666666666666,
+      "sourceIndex": 4,
+      "targetIndex": 12
+    },
+    {
+      "source": "Doyoung",
+      "target": "Yangyang",
+      "weight": 5,
+      "weight_prop": 0.041666666666666664,
+      "sourceIndex": 4,
+      "targetIndex": 13
+    },
+    {
+      "source": "Doyoung",
+      "target": "Shotaro",
+      "weight": 6,
+      "weight_prop": 0.05,
+      "sourceIndex": 4,
+      "targetIndex": 14
+    },
+    {
+      "source": "Doyoung",
+      "target": "Sungchan",
+      "weight": 4,
+      "weight_prop": 0.03333333333333333,
+      "sourceIndex": 4,
+      "targetIndex": 15
+    },
+    {
+      "source": "Doyoung",
+      "target": "Renjun",
+      "weight": 6,
+      "weight_prop": 0.05,
+      "sourceIndex": 4,
+      "targetIndex": 16
+    },
+    {
+      "source": "Doyoung",
+      "target": "Jeno",
+      "weight": 5,
+      "weight_prop": 0.041666666666666664,
+      "sourceIndex": 4,
+      "targetIndex": 17
+    },
+    {
+      "source": "Doyoung",
+      "target": "Jaemin",
+      "weight": 7,
+      "weight_prop": 0.058333333333333334,
+      "sourceIndex": 4,
+      "targetIndex": 18
+    },
+    {
+      "source": "Doyoung",
+      "target": "Chenle",
+      "weight": 5,
+      "weight_prop": 0.041666666666666664,
+      "sourceIndex": 4,
+      "targetIndex": 19
+    },
+    {
+      "source": "Doyoung",
+      "target": "Jisung",
+      "weight": 4,
+      "weight_prop": 0.03333333333333333,
+      "sourceIndex": 4,
+      "targetIndex": 20
+    },
+    {
+      "source": "Doyoung",
+      "target": "Mark",
+      "weight": 102,
+      "weight_prop": 0.85,
+      "sourceIndex": 4,
+      "targetIndex": 21
+    },
+    {
+      "source": "Doyoung",
+      "target": "Haechan",
+      "weight": 101,
+      "weight_prop": 0.8416666666666667,
+      "sourceIndex": 4,
+      "targetIndex": 22
+    },
+    {
+      "source": "Jaehyun",
+      "target": "Taeil",
+      "weight": 108,
+      "weight_prop": 0.907563025210084,
+      "sourceIndex": 5,
+      "targetIndex": 0
+    },
+    {
+      "source": "Jaehyun",
+      "target": "Johnny",
+      "weight": 92,
+      "weight_prop": 0.773109243697479,
+      "sourceIndex": 5,
+      "targetIndex": 1
+    },
+    {
+      "source": "Jaehyun",
+      "target": "Taeyong",
+      "weight": 105,
+      "weight_prop": 0.8823529411764706,
+      "sourceIndex": 5,
+      "targetIndex": 2
+    },
+    {
+      "source": "Jaehyun",
+      "target": "Yuta",
+      "weight": 100,
+      "weight_prop": 0.8403361344537815,
+      "sourceIndex": 5,
+      "targetIndex": 3
+    },
+    {
+      "source": "Jaehyun",
+      "target": "Doyoung",
+      "weight": 104,
+      "weight_prop": 0.8739495798319328,
+      "sourceIndex": 5,
+      "targetIndex": 4
+    },
+    {
+      "source": "Jaehyun",
+      "target": "Jungwoo",
+      "weight": 81,
+      "weight_prop": 0.680672268907563,
+      "sourceIndex": 5,
+      "targetIndex": 6
+    },
+    {
+      "source": "Jaehyun",
+      "target": "Winwin",
+      "weight": 37,
+      "weight_prop": 0.31092436974789917,
+      "sourceIndex": 5,
+      "targetIndex": 7
+    },
+    {
+      "source": "Jaehyun",
+      "target": "Kun",
+      "weight": 6,
+      "weight_prop": 0.05042016806722689,
+      "sourceIndex": 5,
+      "targetIndex": 8
+    },
+    {
+      "source": "Jaehyun",
+      "target": "Ten",
+      "weight": 4,
+      "weight_prop": 0.03361344537815126,
+      "sourceIndex": 5,
+      "targetIndex": 9
+    },
+    {
+      "source": "Jaehyun",
+      "target": "Lucas",
+      "weight": 6,
+      "weight_prop": 0.05042016806722689,
+      "sourceIndex": 5,
+      "targetIndex": 10
+    },
+    {
+      "source": "Jaehyun",
+      "target": "Xiaojun",
+      "weight": 6,
+      "weight_prop": 0.05042016806722689,
+      "sourceIndex": 5,
+      "targetIndex": 11
+    },
+    {
+      "source": "Jaehyun",
+      "target": "Hendery",
+      "weight": 4,
+      "weight_prop": 0.03361344537815126,
+      "sourceIndex": 5,
+      "targetIndex": 12
+    },
+    {
+      "source": "Jaehyun",
+      "target": "Yangyang",
+      "weight": 2,
+      "weight_prop": 0.01680672268907563,
+      "sourceIndex": 5,
+      "targetIndex": 13
+    },
+    {
+      "source": "Jaehyun",
+      "target": "Shotaro",
+      "weight": 6,
+      "weight_prop": 0.05042016806722689,
+      "sourceIndex": 5,
+      "targetIndex": 14
+    },
+    {
+      "source": "Jaehyun",
+      "target": "Sungchan",
+      "weight": 4,
+      "weight_prop": 0.03361344537815126,
+      "sourceIndex": 5,
+      "targetIndex": 15
+    },
+    {
+      "source": "Jaehyun",
+      "target": "Renjun",
+      "weight": 2,
+      "weight_prop": 0.01680672268907563,
+      "sourceIndex": 5,
+      "targetIndex": 16
+    },
+    {
+      "source": "Jaehyun",
+      "target": "Jeno",
+      "weight": 3,
+      "weight_prop": 0.025210084033613446,
+      "sourceIndex": 5,
+      "targetIndex": 17
+    },
+    {
+      "source": "Jaehyun",
+      "target": "Jaemin",
+      "weight": 5,
+      "weight_prop": 0.04201680672268908,
+      "sourceIndex": 5,
+      "targetIndex": 18
+    },
+    {
+      "source": "Jaehyun",
+      "target": "Chenle",
+      "weight": 6,
+      "weight_prop": 0.05042016806722689,
+      "sourceIndex": 5,
+      "targetIndex": 19
+    },
+    {
+      "source": "Jaehyun",
+      "target": "Jisung",
+      "weight": 4,
+      "weight_prop": 0.03361344537815126,
+      "sourceIndex": 5,
+      "targetIndex": 20
+    },
+    {
+      "source": "Jaehyun",
+      "target": "Mark",
+      "weight": 105,
+      "weight_prop": 0.8823529411764706,
+      "sourceIndex": 5,
+      "targetIndex": 21
+    },
+    {
+      "source": "Jaehyun",
+      "target": "Haechan",
+      "weight": 102,
+      "weight_prop": 0.8571428571428571,
+      "sourceIndex": 5,
+      "targetIndex": 22
+    },
+    {
+      "source": "Jungwoo",
+      "target": "Taeil",
+      "weight": 76,
+      "weight_prop": 0.8941176470588236,
+      "sourceIndex": 6,
+      "targetIndex": 0
+    },
+    {
+      "source": "Jungwoo",
+      "target": "Johnny",
+      "weight": 77,
+      "weight_prop": 0.9058823529411765,
+      "sourceIndex": 6,
+      "targetIndex": 1
+    },
+    {
+      "source": "Jungwoo",
+      "target": "Taeyong",
+      "weight": 74,
+      "weight_prop": 0.8705882352941177,
+      "sourceIndex": 6,
+      "targetIndex": 2
+    },
+    {
+      "source": "Jungwoo",
+      "target": "Yuta",
+      "weight": 78,
+      "weight_prop": 0.9176470588235294,
+      "sourceIndex": 6,
+      "targetIndex": 3
+    },
+    {
+      "source": "Jungwoo",
+      "target": "Doyoung",
+      "weight": 77,
+      "weight_prop": 0.9058823529411765,
+      "sourceIndex": 6,
+      "targetIndex": 4
+    },
+    {
+      "source": "Jungwoo",
+      "target": "Jaehyun",
+      "weight": 81,
+      "weight_prop": 0.9529411764705882,
+      "sourceIndex": 6,
+      "targetIndex": 5
+    },
+    {
+      "source": "Jungwoo",
+      "target": "Winwin",
+      "weight": 14,
+      "weight_prop": 0.16470588235294117,
+      "sourceIndex": 6,
+      "targetIndex": 7
+    },
+    {
+      "source": "Jungwoo",
+      "target": "Kun",
+      "weight": 5,
+      "weight_prop": 0.058823529411764705,
+      "sourceIndex": 6,
+      "targetIndex": 8
+    },
+    {
+      "source": "Jungwoo",
+      "target": "Ten",
+      "weight": 3,
+      "weight_prop": 0.03529411764705882,
+      "sourceIndex": 6,
+      "targetIndex": 9
+    },
+    {
+      "source": "Jungwoo",
+      "target": "Lucas",
+      "weight": 4,
+      "weight_prop": 0.047058823529411764,
+      "sourceIndex": 6,
+      "targetIndex": 10
+    },
+    {
+      "source": "Jungwoo",
+      "target": "Xiaojun",
+      "weight": 4,
+      "weight_prop": 0.047058823529411764,
+      "sourceIndex": 6,
+      "targetIndex": 11
+    },
+    {
+      "source": "Jungwoo",
+      "target": "Hendery",
+      "weight": 7,
+      "weight_prop": 0.08235294117647059,
+      "sourceIndex": 6,
+      "targetIndex": 12
+    },
+    {
+      "source": "Jungwoo",
+      "target": "Yangyang",
+      "weight": 3,
+      "weight_prop": 0.03529411764705882,
+      "sourceIndex": 6,
+      "targetIndex": 13
+    },
+    {
+      "source": "Jungwoo",
+      "target": "Shotaro",
+      "weight": 6,
+      "weight_prop": 0.07058823529411765,
+      "sourceIndex": 6,
+      "targetIndex": 14
+    },
+    {
+      "source": "Jungwoo",
+      "target": "Sungchan",
+      "weight": 3,
+      "weight_prop": 0.03529411764705882,
+      "sourceIndex": 6,
+      "targetIndex": 15
+    },
+    {
+      "source": "Jungwoo",
+      "target": "Renjun",
+      "weight": 3,
+      "weight_prop": 0.03529411764705882,
+      "sourceIndex": 6,
+      "targetIndex": 16
+    },
+    {
+      "source": "Jungwoo",
+      "target": "Jeno",
+      "weight": 3,
+      "weight_prop": 0.03529411764705882,
+      "sourceIndex": 6,
+      "targetIndex": 17
+    },
+    {
+      "source": "Jungwoo",
+      "target": "Jaemin",
+      "weight": 5,
+      "weight_prop": 0.058823529411764705,
+      "sourceIndex": 6,
+      "targetIndex": 18
+    },
+    {
+      "source": "Jungwoo",
+      "target": "Chenle",
+      "weight": 7,
+      "weight_prop": 0.08235294117647059,
+      "sourceIndex": 6,
+      "targetIndex": 19
+    },
+    {
+      "source": "Jungwoo",
+      "target": "Jisung",
+      "weight": 6,
+      "weight_prop": 0.07058823529411765,
+      "sourceIndex": 6,
+      "targetIndex": 20
+    },
+    {
+      "source": "Jungwoo",
+      "target": "Mark",
+      "weight": 77,
+      "weight_prop": 0.9058823529411765,
+      "sourceIndex": 6,
+      "targetIndex": 21
+    },
+    {
+      "source": "Jungwoo",
+      "target": "Haechan",
+      "weight": 75,
+      "weight_prop": 0.8823529411764706,
+      "sourceIndex": 6,
+      "targetIndex": 22
+    },
+    {
+      "source": "Winwin",
+      "target": "Taeil",
+      "weight": 35,
+      "weight_prop": 0.4666666666666667,
+      "sourceIndex": 7,
+      "targetIndex": 0
+    },
+    {
+      "source": "Winwin",
+      "target": "Johnny",
+      "weight": 30,
+      "weight_prop": 0.4,
+      "sourceIndex": 7,
+      "targetIndex": 1
+    },
+    {
+      "source": "Winwin",
+      "target": "Taeyong",
+      "weight": 36,
+      "weight_prop": 0.48,
+      "sourceIndex": 7,
+      "targetIndex": 2
+    },
+    {
+      "source": "Winwin",
+      "target": "Yuta",
+      "weight": 35,
+      "weight_prop": 0.4666666666666667,
+      "sourceIndex": 7,
+      "targetIndex": 3
+    },
+    {
+      "source": "Winwin",
+      "target": "Doyoung",
+      "weight": 32,
+      "weight_prop": 0.4266666666666667,
+      "sourceIndex": 7,
+      "targetIndex": 4
+    },
+    {
+      "source": "Winwin",
+      "target": "Jaehyun",
+      "weight": 37,
+      "weight_prop": 0.49333333333333335,
+      "sourceIndex": 7,
+      "targetIndex": 5
+    },
+    {
+      "source": "Winwin",
+      "target": "Jungwoo",
+      "weight": 14,
+      "weight_prop": 0.18666666666666668,
+      "sourceIndex": 7,
+      "targetIndex": 6
+    },
+    {
+      "source": "Winwin",
+      "target": "Kun",
+      "weight": 37,
+      "weight_prop": 0.49333333333333335,
+      "sourceIndex": 7,
+      "targetIndex": 8
+    },
+    {
+      "source": "Winwin",
+      "target": "Ten",
+      "weight": 39,
+      "weight_prop": 0.52,
+      "sourceIndex": 7,
+      "targetIndex": 9
+    },
+    {
+      "source": "Winwin",
+      "target": "Lucas",
+      "weight": 34,
+      "weight_prop": 0.4533333333333333,
+      "sourceIndex": 7,
+      "targetIndex": 10
+    },
+    {
+      "source": "Winwin",
+      "target": "Xiaojun",
+      "weight": 37,
+      "weight_prop": 0.49333333333333335,
+      "sourceIndex": 7,
+      "targetIndex": 11
+    },
+    {
+      "source": "Winwin",
+      "target": "Hendery",
+      "weight": 39,
+      "weight_prop": 0.52,
+      "sourceIndex": 7,
+      "targetIndex": 12
+    },
+    {
+      "source": "Winwin",
+      "target": "Yangyang",
+      "weight": 40,
+      "weight_prop": 0.5333333333333333,
+      "sourceIndex": 7,
+      "targetIndex": 13
+    },
+    {
+      "source": "Winwin",
+      "target": "Shotaro",
+      "weight": 2,
+      "weight_prop": 0.02666666666666667,
+      "sourceIndex": 7,
+      "targetIndex": 14
+    },
+    {
+      "source": "Winwin",
+      "target": "Sungchan",
+      "weight": 3,
+      "weight_prop": 0.04,
+      "sourceIndex": 7,
+      "targetIndex": 15
+    },
+    {
+      "source": "Winwin",
+      "target": "Renjun",
+      "weight": 2,
+      "weight_prop": 0.02666666666666667,
+      "sourceIndex": 7,
+      "targetIndex": 16
+    },
+    {
+      "source": "Winwin",
+      "target": "Jeno",
+      "weight": 4,
+      "weight_prop": 0.05333333333333334,
+      "sourceIndex": 7,
+      "targetIndex": 17
+    },
+    {
+      "source": "Winwin",
+      "target": "Jaemin",
+      "weight": 3,
+      "weight_prop": 0.04,
+      "sourceIndex": 7,
+      "targetIndex": 18
+    },
+    {
+      "source": "Winwin",
+      "target": "Chenle",
+      "weight": 2,
+      "weight_prop": 0.02666666666666667,
+      "sourceIndex": 7,
+      "targetIndex": 19
+    },
+    {
+      "source": "Winwin",
+      "target": "Jisung",
+      "weight": 3,
+      "weight_prop": 0.04,
+      "sourceIndex": 7,
+      "targetIndex": 20
+    },
+    {
+      "source": "Winwin",
+      "target": "Mark",
+      "weight": 37,
+      "weight_prop": 0.49333333333333335,
+      "sourceIndex": 7,
+      "targetIndex": 21
+    },
+    {
+      "source": "Winwin",
+      "target": "Haechan",
+      "weight": 36,
+      "weight_prop": 0.48,
+      "sourceIndex": 7,
+      "targetIndex": 22
+    },
+    {
+      "source": "Kun",
+      "target": "Taeil",
+      "weight": 9,
+      "weight_prop": 0.17307692307692307,
+      "sourceIndex": 8,
+      "targetIndex": 0
+    },
+    {
+      "source": "Kun",
+      "target": "Johnny",
+      "weight": 4,
+      "weight_prop": 0.07692307692307693,
+      "sourceIndex": 8,
+      "targetIndex": 1
+    },
+    {
+      "source": "Kun",
+      "target": "Taeyong",
+      "weight": 4,
+      "weight_prop": 0.07692307692307693,
+      "sourceIndex": 8,
+      "targetIndex": 2
+    },
+    {
+      "source": "Kun",
+      "target": "Yuta",
+      "weight": 6,
+      "weight_prop": 0.11538461538461539,
+      "sourceIndex": 8,
+      "targetIndex": 3
+    },
+    {
+      "source": "Kun",
+      "target": "Doyoung",
+      "weight": 7,
+      "weight_prop": 0.1346153846153846,
+      "sourceIndex": 8,
+      "targetIndex": 4
+    },
+    {
+      "source": "Kun",
+      "target": "Jaehyun",
+      "weight": 6,
+      "weight_prop": 0.11538461538461539,
+      "sourceIndex": 8,
+      "targetIndex": 5
+    },
+    {
+      "source": "Kun",
+      "target": "Jungwoo",
+      "weight": 5,
+      "weight_prop": 0.09615384615384616,
+      "sourceIndex": 8,
+      "targetIndex": 6
+    },
+    {
+      "source": "Kun",
+      "target": "Winwin",
+      "weight": 37,
+      "weight_prop": 0.7115384615384616,
+      "sourceIndex": 8,
+      "targetIndex": 7
+    },
+    {
+      "source": "Kun",
+      "target": "Ten",
+      "weight": 40,
+      "weight_prop": 0.7692307692307693,
+      "sourceIndex": 8,
+      "targetIndex": 9
+    },
+    {
+      "source": "Kun",
+      "target": "Lucas",
+      "weight": 30,
+      "weight_prop": 0.5769230769230769,
+      "sourceIndex": 8,
+      "targetIndex": 10
+    },
+    {
+      "source": "Kun",
+      "target": "Xiaojun",
+      "weight": 43,
+      "weight_prop": 0.8269230769230769,
+      "sourceIndex": 8,
+      "targetIndex": 11
+    },
+    {
+      "source": "Kun",
+      "target": "Hendery",
+      "weight": 40,
+      "weight_prop": 0.7692307692307693,
+      "sourceIndex": 8,
+      "targetIndex": 12
+    },
+    {
+      "source": "Kun",
+      "target": "Yangyang",
+      "weight": 40,
+      "weight_prop": 0.7692307692307693,
+      "sourceIndex": 8,
+      "targetIndex": 13
+    },
+    {
+      "source": "Kun",
+      "target": "Shotaro",
+      "weight": 4,
+      "weight_prop": 0.07692307692307693,
+      "sourceIndex": 8,
+      "targetIndex": 14
+    },
+    {
+      "source": "Kun",
+      "target": "Sungchan",
+      "weight": 3,
+      "weight_prop": 0.057692307692307696,
+      "sourceIndex": 8,
+      "targetIndex": 15
+    },
+    {
+      "source": "Kun",
+      "target": "Renjun",
+      "weight": 5,
+      "weight_prop": 0.09615384615384616,
+      "sourceIndex": 8,
+      "targetIndex": 16
+    },
+    {
+      "source": "Kun",
+      "target": "Jeno",
+      "weight": 2,
+      "weight_prop": 0.038461538461538464,
+      "sourceIndex": 8,
+      "targetIndex": 17
+    },
+    {
+      "source": "Kun",
+      "target": "Jaemin",
+      "weight": 2,
+      "weight_prop": 0.038461538461538464,
+      "sourceIndex": 8,
+      "targetIndex": 18
+    },
+    {
+      "source": "Kun",
+      "target": "Chenle",
+      "weight": 9,
+      "weight_prop": 0.17307692307692307,
+      "sourceIndex": 8,
+      "targetIndex": 19
+    },
+    {
+      "source": "Kun",
+      "target": "Jisung",
+      "weight": 5,
+      "weight_prop": 0.09615384615384616,
+      "sourceIndex": 8,
+      "targetIndex": 20
+    },
+    {
+      "source": "Kun",
+      "target": "Mark",
+      "weight": 2,
+      "weight_prop": 0.038461538461538464,
+      "sourceIndex": 8,
+      "targetIndex": 21
+    },
+    {
+      "source": "Kun",
+      "target": "Haechan",
+      "weight": 5,
+      "weight_prop": 0.09615384615384616,
+      "sourceIndex": 8,
+      "targetIndex": 22
+    },
+    {
+      "source": "Ten",
+      "target": "Taeil",
+      "weight": 5,
+      "weight_prop": 0.07142857142857142,
+      "sourceIndex": 9,
+      "targetIndex": 0
+    },
+    {
+      "source": "Ten",
+      "target": "Johnny",
+      "weight": 5,
+      "weight_prop": 0.07142857142857142,
+      "sourceIndex": 9,
+      "targetIndex": 1
+    },
+    {
+      "source": "Ten",
+      "target": "Taeyong",
+      "weight": 26,
+      "weight_prop": 0.37142857142857144,
+      "sourceIndex": 9,
+      "targetIndex": 2
+    },
+    {
+      "source": "Ten",
+      "target": "Yuta",
+      "weight": 6,
+      "weight_prop": 0.08571428571428572,
+      "sourceIndex": 9,
+      "targetIndex": 3
+    },
+    {
+      "source": "Ten",
+      "target": "Doyoung",
+      "weight": 3,
+      "weight_prop": 0.04285714285714286,
+      "sourceIndex": 9,
+      "targetIndex": 4
+    },
+    {
+      "source": "Ten",
+      "target": "Jaehyun",
+      "weight": 4,
+      "weight_prop": 0.05714285714285714,
+      "sourceIndex": 9,
+      "targetIndex": 5
+    },
+    {
+      "source": "Ten",
+      "target": "Jungwoo",
+      "weight": 3,
+      "weight_prop": 0.04285714285714286,
+      "sourceIndex": 9,
+      "targetIndex": 6
+    },
+    {
+      "source": "Ten",
+      "target": "Winwin",
+      "weight": 39,
+      "weight_prop": 0.5571428571428572,
+      "sourceIndex": 9,
+      "targetIndex": 7
+    },
+    {
+      "source": "Ten",
+      "target": "Kun",
+      "weight": 40,
+      "weight_prop": 0.5714285714285714,
+      "sourceIndex": 9,
+      "targetIndex": 8
+    },
+    {
+      "source": "Ten",
+      "target": "Lucas",
+      "weight": 49,
+      "weight_prop": 0.7,
+      "sourceIndex": 9,
+      "targetIndex": 10
+    },
+    {
+      "source": "Ten",
+      "target": "Xiaojun",
+      "weight": 41,
+      "weight_prop": 0.5857142857142857,
+      "sourceIndex": 9,
+      "targetIndex": 11
+    },
+    {
+      "source": "Ten",
+      "target": "Hendery",
+      "weight": 40,
+      "weight_prop": 0.5714285714285714,
+      "sourceIndex": 9,
+      "targetIndex": 12
+    },
+    {
+      "source": "Ten",
+      "target": "Yangyang",
+      "weight": 41,
+      "weight_prop": 0.5857142857142857,
+      "sourceIndex": 9,
+      "targetIndex": 13
+    },
+    {
+      "source": "Ten",
+      "target": "Shotaro",
+      "weight": 2,
+      "weight_prop": 0.02857142857142857,
+      "sourceIndex": 9,
+      "targetIndex": 14
+    },
+    {
+      "source": "Ten",
+      "target": "Sungchan",
+      "weight": 4,
+      "weight_prop": 0.05714285714285714,
+      "sourceIndex": 9,
+      "targetIndex": 15
+    },
+    {
+      "source": "Ten",
+      "target": "Renjun",
+      "weight": 3,
+      "weight_prop": 0.04285714285714286,
+      "sourceIndex": 9,
+      "targetIndex": 16
+    },
+    {
+      "source": "Ten",
+      "target": "Jeno",
+      "weight": 5,
+      "weight_prop": 0.07142857142857142,
+      "sourceIndex": 9,
+      "targetIndex": 17
+    },
+    {
+      "source": "Ten",
+      "target": "Jaemin",
+      "weight": 4,
+      "weight_prop": 0.05714285714285714,
+      "sourceIndex": 9,
+      "targetIndex": 18
+    },
+    {
+      "source": "Ten",
+      "target": "Chenle",
+      "weight": 2,
+      "weight_prop": 0.02857142857142857,
+      "sourceIndex": 9,
+      "targetIndex": 19
+    },
+    {
+      "source": "Ten",
+      "target": "Jisung",
+      "weight": 5,
+      "weight_prop": 0.07142857142857142,
+      "sourceIndex": 9,
+      "targetIndex": 20
+    },
+    {
+      "source": "Ten",
+      "target": "Mark",
+      "weight": 24,
+      "weight_prop": 0.34285714285714286,
+      "sourceIndex": 9,
+      "targetIndex": 21
+    },
+    {
+      "source": "Ten",
+      "target": "Haechan",
+      "weight": 6,
+      "weight_prop": 0.08571428571428572,
+      "sourceIndex": 9,
+      "targetIndex": 22
+    },
+    {
+      "source": "Lucas",
+      "target": "Taeil",
+      "weight": 3,
+      "weight_prop": 0.05084745762711865,
+      "sourceIndex": 10,
+      "targetIndex": 0
+    },
+    {
+      "source": "Lucas",
+      "target": "Johnny",
+      "weight": 3,
+      "weight_prop": 0.05084745762711865,
+      "sourceIndex": 10,
+      "targetIndex": 1
+    },
+    {
+      "source": "Lucas",
+      "target": "Taeyong",
+      "weight": 27,
+      "weight_prop": 0.4576271186440678,
+      "sourceIndex": 10,
+      "targetIndex": 2
+    },
+    {
+      "source": "Lucas",
+      "target": "Yuta",
+      "weight": 4,
+      "weight_prop": 0.06779661016949153,
+      "sourceIndex": 10,
+      "targetIndex": 3
+    },
+    {
+      "source": "Lucas",
+      "target": "Doyoung",
+      "weight": 8,
+      "weight_prop": 0.13559322033898305,
+      "sourceIndex": 10,
+      "targetIndex": 4
+    },
+    {
+      "source": "Lucas",
+      "target": "Jaehyun",
+      "weight": 6,
+      "weight_prop": 0.1016949152542373,
+      "sourceIndex": 10,
+      "targetIndex": 5
+    },
+    {
+      "source": "Lucas",
+      "target": "Jungwoo",
+      "weight": 4,
+      "weight_prop": 0.06779661016949153,
+      "sourceIndex": 10,
+      "targetIndex": 6
+    },
+    {
+      "source": "Lucas",
+      "target": "Winwin",
+      "weight": 34,
+      "weight_prop": 0.576271186440678,
+      "sourceIndex": 10,
+      "targetIndex": 7
+    },
+    {
+      "source": "Lucas",
+      "target": "Kun",
+      "weight": 30,
+      "weight_prop": 0.5084745762711864,
+      "sourceIndex": 10,
+      "targetIndex": 8
+    },
+    {
+      "source": "Lucas",
+      "target": "Ten",
+      "weight": 49,
+      "weight_prop": 0.8305084745762712,
+      "sourceIndex": 10,
+      "targetIndex": 9
+    },
+    {
+      "source": "Lucas",
+      "target": "Xiaojun",
+      "weight": 32,
+      "weight_prop": 0.5423728813559322,
+      "sourceIndex": 10,
+      "targetIndex": 11
+    },
+    {
+      "source": "Lucas",
+      "target": "Hendery",
+      "weight": 32,
+      "weight_prop": 0.5423728813559322,
+      "sourceIndex": 10,
+      "targetIndex": 12
+    },
+    {
+      "source": "Lucas",
+      "target": "Yangyang",
+      "weight": 32,
+      "weight_prop": 0.5423728813559322,
+      "sourceIndex": 10,
+      "targetIndex": 13
+    },
+    {
+      "source": "Lucas",
+      "target": "Shotaro",
+      "weight": 4,
+      "weight_prop": 0.06779661016949153,
+      "sourceIndex": 10,
+      "targetIndex": 14
+    },
+    {
+      "source": "Lucas",
+      "target": "Sungchan",
+      "weight": 2,
+      "weight_prop": 0.03389830508474576,
+      "sourceIndex": 10,
+      "targetIndex": 15
+    },
+    {
+      "source": "Lucas",
+      "target": "Renjun",
+      "weight": 3,
+      "weight_prop": 0.05084745762711865,
+      "sourceIndex": 10,
+      "targetIndex": 16
+    },
+    {
+      "source": "Lucas",
+      "target": "Jeno",
+      "weight": 3,
+      "weight_prop": 0.05084745762711865,
+      "sourceIndex": 10,
+      "targetIndex": 17
+    },
+    {
+      "source": "Lucas",
+      "target": "Jaemin",
+      "weight": 4,
+      "weight_prop": 0.06779661016949153,
+      "sourceIndex": 10,
+      "targetIndex": 18
+    },
+    {
+      "source": "Lucas",
+      "target": "Chenle",
+      "weight": 2,
+      "weight_prop": 0.03389830508474576,
+      "sourceIndex": 10,
+      "targetIndex": 19
+    },
+    {
+      "source": "Lucas",
+      "target": "Jisung",
+      "weight": 3,
+      "weight_prop": 0.05084745762711865,
+      "sourceIndex": 10,
+      "targetIndex": 20
+    },
+    {
+      "source": "Lucas",
+      "target": "Mark",
+      "weight": 26,
+      "weight_prop": 0.4406779661016949,
+      "sourceIndex": 10,
+      "targetIndex": 21
+    },
+    {
+      "source": "Lucas",
+      "target": "Haechan",
+      "weight": 3,
+      "weight_prop": 0.05084745762711865,
+      "sourceIndex": 10,
+      "targetIndex": 22
+    },
+    {
+      "source": "Xiaojun",
+      "target": "Taeil",
+      "weight": 6,
+      "weight_prop": 0.12244897959183673,
+      "sourceIndex": 11,
+      "targetIndex": 0
+    },
+    {
+      "source": "Xiaojun",
+      "target": "Johnny",
+      "weight": 3,
+      "weight_prop": 0.061224489795918366,
+      "sourceIndex": 11,
+      "targetIndex": 1
+    },
+    {
+      "source": "Xiaojun",
+      "target": "Taeyong",
+      "weight": 4,
+      "weight_prop": 0.08163265306122448,
+      "sourceIndex": 11,
+      "targetIndex": 2
+    },
+    {
+      "source": "Xiaojun",
+      "target": "Yuta",
+      "weight": 3,
+      "weight_prop": 0.061224489795918366,
+      "sourceIndex": 11,
+      "targetIndex": 3
+    },
+    {
+      "source": "Xiaojun",
+      "target": "Doyoung",
+      "weight": 6,
+      "weight_prop": 0.12244897959183673,
+      "sourceIndex": 11,
+      "targetIndex": 4
+    },
+    {
+      "source": "Xiaojun",
+      "target": "Jaehyun",
+      "weight": 6,
+      "weight_prop": 0.12244897959183673,
+      "sourceIndex": 11,
+      "targetIndex": 5
+    },
+    {
+      "source": "Xiaojun",
+      "target": "Jungwoo",
+      "weight": 4,
+      "weight_prop": 0.08163265306122448,
+      "sourceIndex": 11,
+      "targetIndex": 6
+    },
+    {
+      "source": "Xiaojun",
+      "target": "Winwin",
+      "weight": 37,
+      "weight_prop": 0.7551020408163265,
+      "sourceIndex": 11,
+      "targetIndex": 7
+    },
+    {
+      "source": "Xiaojun",
+      "target": "Kun",
+      "weight": 43,
+      "weight_prop": 0.8775510204081632,
+      "sourceIndex": 11,
+      "targetIndex": 8
+    },
+    {
+      "source": "Xiaojun",
+      "target": "Ten",
+      "weight": 41,
+      "weight_prop": 0.8367346938775511,
+      "sourceIndex": 11,
+      "targetIndex": 9
+    },
+    {
+      "source": "Xiaojun",
+      "target": "Lucas",
+      "weight": 32,
+      "weight_prop": 0.6530612244897959,
+      "sourceIndex": 11,
+      "targetIndex": 10
+    },
+    {
+      "source": "Xiaojun",
+      "target": "Hendery",
+      "weight": 38,
+      "weight_prop": 0.7755102040816326,
+      "sourceIndex": 11,
+      "targetIndex": 12
+    },
+    {
+      "source": "Xiaojun",
+      "target": "Yangyang",
+      "weight": 39,
+      "weight_prop": 0.7959183673469388,
+      "sourceIndex": 11,
+      "targetIndex": 13
+    },
+    {
+      "source": "Xiaojun",
+      "target": "Shotaro",
+      "weight": 5,
+      "weight_prop": 0.10204081632653061,
+      "sourceIndex": 11,
+      "targetIndex": 14
+    },
+    {
+      "source": "Xiaojun",
+      "target": "Sungchan",
+      "weight": 3,
+      "weight_prop": 0.061224489795918366,
+      "sourceIndex": 11,
+      "targetIndex": 15
+    },
+    {
+      "source": "Xiaojun",
+      "target": "Renjun",
+      "weight": 4,
+      "weight_prop": 0.08163265306122448,
+      "sourceIndex": 11,
+      "targetIndex": 16
+    },
+    {
+      "source": "Xiaojun",
+      "target": "Jeno",
+      "weight": 3,
+      "weight_prop": 0.061224489795918366,
+      "sourceIndex": 11,
+      "targetIndex": 17
+    },
+    {
+      "source": "Xiaojun",
+      "target": "Jaemin",
+      "weight": 5,
+      "weight_prop": 0.10204081632653061,
+      "sourceIndex": 11,
+      "targetIndex": 18
+    },
+    {
+      "source": "Xiaojun",
+      "target": "Chenle",
+      "weight": 3,
+      "weight_prop": 0.061224489795918366,
+      "sourceIndex": 11,
+      "targetIndex": 19
+    },
+    {
+      "source": "Xiaojun",
+      "target": "Jisung",
+      "weight": 2,
+      "weight_prop": 0.04081632653061224,
+      "sourceIndex": 11,
+      "targetIndex": 20
+    },
+    {
+      "source": "Xiaojun",
+      "target": "Mark",
+      "weight": 3,
+      "weight_prop": 0.061224489795918366,
+      "sourceIndex": 11,
+      "targetIndex": 21
+    },
+    {
+      "source": "Xiaojun",
+      "target": "Haechan",
+      "weight": 4,
+      "weight_prop": 0.08163265306122448,
+      "sourceIndex": 11,
+      "targetIndex": 22
+    },
+    {
+      "source": "Hendery",
+      "target": "Taeil",
+      "weight": 3,
+      "weight_prop": 0.06382978723404255,
+      "sourceIndex": 12,
+      "targetIndex": 0
+    },
+    {
+      "source": "Hendery",
+      "target": "Johnny",
+      "weight": 6,
+      "weight_prop": 0.1276595744680851,
+      "sourceIndex": 12,
+      "targetIndex": 1
+    },
+    {
+      "source": "Hendery",
+      "target": "Taeyong",
+      "weight": 4,
+      "weight_prop": 0.0851063829787234,
+      "sourceIndex": 12,
+      "targetIndex": 2
+    },
+    {
+      "source": "Hendery",
+      "target": "Yuta",
+      "weight": 6,
+      "weight_prop": 0.1276595744680851,
+      "sourceIndex": 12,
+      "targetIndex": 3
+    },
+    {
+      "source": "Hendery",
+      "target": "Doyoung",
+      "weight": 2,
+      "weight_prop": 0.0425531914893617,
+      "sourceIndex": 12,
+      "targetIndex": 4
+    },
+    {
+      "source": "Hendery",
+      "target": "Jaehyun",
+      "weight": 4,
+      "weight_prop": 0.0851063829787234,
+      "sourceIndex": 12,
+      "targetIndex": 5
+    },
+    {
+      "source": "Hendery",
+      "target": "Jungwoo",
+      "weight": 7,
+      "weight_prop": 0.14893617021276595,
+      "sourceIndex": 12,
+      "targetIndex": 6
+    },
+    {
+      "source": "Hendery",
+      "target": "Winwin",
+      "weight": 39,
+      "weight_prop": 0.8297872340425532,
+      "sourceIndex": 12,
+      "targetIndex": 7
+    },
+    {
+      "source": "Hendery",
+      "target": "Kun",
+      "weight": 40,
+      "weight_prop": 0.851063829787234,
+      "sourceIndex": 12,
+      "targetIndex": 8
+    },
+    {
+      "source": "Hendery",
+      "target": "Ten",
+      "weight": 40,
+      "weight_prop": 0.851063829787234,
+      "sourceIndex": 12,
+      "targetIndex": 9
+    },
+    {
+      "source": "Hendery",
+      "target": "Lucas",
+      "weight": 32,
+      "weight_prop": 0.6808510638297872,
+      "sourceIndex": 12,
+      "targetIndex": 10
+    },
+    {
+      "source": "Hendery",
+      "target": "Xiaojun",
+      "weight": 38,
+      "weight_prop": 0.8085106382978723,
+      "sourceIndex": 12,
+      "targetIndex": 11
+    },
+    {
+      "source": "Hendery",
+      "target": "Yangyang",
+      "weight": 42,
+      "weight_prop": 0.8936170212765957,
+      "sourceIndex": 12,
+      "targetIndex": 13
+    },
+    {
+      "source": "Hendery",
+      "target": "Shotaro",
+      "weight": 5,
+      "weight_prop": 0.10638297872340426,
+      "sourceIndex": 12,
+      "targetIndex": 14
+    },
+    {
+      "source": "Hendery",
+      "target": "Sungchan",
+      "weight": 4,
+      "weight_prop": 0.0851063829787234,
+      "sourceIndex": 12,
+      "targetIndex": 15
+    },
+    {
+      "source": "Hendery",
+      "target": "Renjun",
+      "weight": 3,
+      "weight_prop": 0.06382978723404255,
+      "sourceIndex": 12,
+      "targetIndex": 16
+    },
+    {
+      "source": "Hendery",
+      "target": "Jeno",
+      "weight": 4,
+      "weight_prop": 0.0851063829787234,
+      "sourceIndex": 12,
+      "targetIndex": 17
+    },
+    {
+      "source": "Hendery",
+      "target": "Jaemin",
+      "weight": 4,
+      "weight_prop": 0.0851063829787234,
+      "sourceIndex": 12,
+      "targetIndex": 18
+    },
+    {
+      "source": "Hendery",
+      "target": "Chenle",
+      "weight": 6,
+      "weight_prop": 0.1276595744680851,
+      "sourceIndex": 12,
+      "targetIndex": 19
+    },
+    {
+      "source": "Hendery",
+      "target": "Jisung",
+      "weight": 6,
+      "weight_prop": 0.1276595744680851,
+      "sourceIndex": 12,
+      "targetIndex": 20
+    },
+    {
+      "source": "Hendery",
+      "target": "Mark",
+      "weight": 5,
+      "weight_prop": 0.10638297872340426,
+      "sourceIndex": 12,
+      "targetIndex": 21
+    },
+    {
+      "source": "Hendery",
+      "target": "Haechan",
+      "weight": 2,
+      "weight_prop": 0.0425531914893617,
+      "sourceIndex": 12,
+      "targetIndex": 22
+    },
+    {
+      "source": "Yangyang",
+      "target": "Taeil",
+      "weight": 3,
+      "weight_prop": 0.061224489795918366,
+      "sourceIndex": 13,
+      "targetIndex": 0
+    },
+    {
+      "source": "Yangyang",
+      "target": "Johnny",
+      "weight": 4,
+      "weight_prop": 0.08163265306122448,
+      "sourceIndex": 13,
+      "targetIndex": 1
+    },
+    {
+      "source": "Yangyang",
+      "target": "Taeyong",
+      "weight": 6,
+      "weight_prop": 0.12244897959183673,
+      "sourceIndex": 13,
+      "targetIndex": 2
+    },
+    {
+      "source": "Yangyang",
+      "target": "Yuta",
+      "weight": 3,
+      "weight_prop": 0.061224489795918366,
+      "sourceIndex": 13,
+      "targetIndex": 3
+    },
+    {
+      "source": "Yangyang",
+      "target": "Doyoung",
+      "weight": 5,
+      "weight_prop": 0.10204081632653061,
+      "sourceIndex": 13,
+      "targetIndex": 4
+    },
+    {
+      "source": "Yangyang",
+      "target": "Jaehyun",
+      "weight": 2,
+      "weight_prop": 0.04081632653061224,
+      "sourceIndex": 13,
+      "targetIndex": 5
+    },
+    {
+      "source": "Yangyang",
+      "target": "Jungwoo",
+      "weight": 3,
+      "weight_prop": 0.061224489795918366,
+      "sourceIndex": 13,
+      "targetIndex": 6
+    },
+    {
+      "source": "Yangyang",
+      "target": "Winwin",
+      "weight": 40,
+      "weight_prop": 0.8163265306122449,
+      "sourceIndex": 13,
+      "targetIndex": 7
+    },
+    {
+      "source": "Yangyang",
+      "target": "Kun",
+      "weight": 40,
+      "weight_prop": 0.8163265306122449,
+      "sourceIndex": 13,
+      "targetIndex": 8
+    },
+    {
+      "source": "Yangyang",
+      "target": "Ten",
+      "weight": 41,
+      "weight_prop": 0.8367346938775511,
+      "sourceIndex": 13,
+      "targetIndex": 9
+    },
+    {
+      "source": "Yangyang",
+      "target": "Lucas",
+      "weight": 32,
+      "weight_prop": 0.6530612244897959,
+      "sourceIndex": 13,
+      "targetIndex": 10
+    },
+    {
+      "source": "Yangyang",
+      "target": "Xiaojun",
+      "weight": 39,
+      "weight_prop": 0.7959183673469388,
+      "sourceIndex": 13,
+      "targetIndex": 11
+    },
+    {
+      "source": "Yangyang",
+      "target": "Hendery",
+      "weight": 42,
+      "weight_prop": 0.8571428571428571,
+      "sourceIndex": 13,
+      "targetIndex": 12
+    },
+    {
+      "source": "Yangyang",
+      "target": "Shotaro",
+      "weight": 4,
+      "weight_prop": 0.08163265306122448,
+      "sourceIndex": 13,
+      "targetIndex": 14
+    },
+    {
+      "source": "Yangyang",
+      "target": "Sungchan",
+      "weight": 5,
+      "weight_prop": 0.10204081632653061,
+      "sourceIndex": 13,
+      "targetIndex": 15
+    },
+    {
+      "source": "Yangyang",
+      "target": "Renjun",
+      "weight": 3,
+      "weight_prop": 0.061224489795918366,
+      "sourceIndex": 13,
+      "targetIndex": 16
+    },
+    {
+      "source": "Yangyang",
+      "target": "Jeno",
+      "weight": 7,
+      "weight_prop": 0.14285714285714285,
+      "sourceIndex": 13,
+      "targetIndex": 17
+    },
+    {
+      "source": "Yangyang",
+      "target": "Jaemin",
+      "weight": 4,
+      "weight_prop": 0.08163265306122448,
+      "sourceIndex": 13,
+      "targetIndex": 18
+    },
+    {
+      "source": "Yangyang",
+      "target": "Chenle",
+      "weight": 3,
+      "weight_prop": 0.061224489795918366,
+      "sourceIndex": 13,
+      "targetIndex": 19
+    },
+    {
+      "source": "Yangyang",
+      "target": "Jisung",
+      "weight": 3,
+      "weight_prop": 0.061224489795918366,
+      "sourceIndex": 13,
+      "targetIndex": 20
+    },
+    {
+      "source": "Yangyang",
+      "target": "Mark",
+      "weight": 8,
+      "weight_prop": 0.16326530612244897,
+      "sourceIndex": 13,
+      "targetIndex": 21
+    },
+    {
+      "source": "Yangyang",
+      "target": "Haechan",
+      "weight": 4,
+      "weight_prop": 0.08163265306122448,
+      "sourceIndex": 13,
+      "targetIndex": 22
+    },
+    {
+      "source": "Shotaro",
+      "target": "Taeil",
+      "weight": 2,
+      "weight_prop": 0.2222222222222222,
+      "sourceIndex": 14,
+      "targetIndex": 0
+    },
+    {
+      "source": "Shotaro",
+      "target": "Johnny",
+      "weight": 3,
+      "weight_prop": 0.3333333333333333,
+      "sourceIndex": 14,
+      "targetIndex": 1
+    },
+    {
+      "source": "Shotaro",
+      "target": "Taeyong",
+      "weight": 5,
+      "weight_prop": 0.5555555555555556,
+      "sourceIndex": 14,
+      "targetIndex": 2
+    },
+    {
+      "source": "Shotaro",
+      "target": "Yuta",
+      "weight": 3,
+      "weight_prop": 0.3333333333333333,
+      "sourceIndex": 14,
+      "targetIndex": 3
+    },
+    {
+      "source": "Shotaro",
+      "target": "Doyoung",
+      "weight": 6,
+      "weight_prop": 0.6666666666666666,
+      "sourceIndex": 14,
+      "targetIndex": 4
+    },
+    {
+      "source": "Shotaro",
+      "target": "Jaehyun",
+      "weight": 6,
+      "weight_prop": 0.6666666666666666,
+      "sourceIndex": 14,
+      "targetIndex": 5
+    },
+    {
+      "source": "Shotaro",
+      "target": "Jungwoo",
+      "weight": 6,
+      "weight_prop": 0.6666666666666666,
+      "sourceIndex": 14,
+      "targetIndex": 6
+    },
+    {
+      "source": "Shotaro",
+      "target": "Winwin",
+      "weight": 2,
+      "weight_prop": 0.2222222222222222,
+      "sourceIndex": 14,
+      "targetIndex": 7
+    },
+    {
+      "source": "Shotaro",
+      "target": "Kun",
+      "weight": 4,
+      "weight_prop": 0.4444444444444444,
+      "sourceIndex": 14,
+      "targetIndex": 8
+    },
+    {
+      "source": "Shotaro",
+      "target": "Ten",
+      "weight": 2,
+      "weight_prop": 0.2222222222222222,
+      "sourceIndex": 14,
+      "targetIndex": 9
+    },
+    {
+      "source": "Shotaro",
+      "target": "Lucas",
+      "weight": 4,
+      "weight_prop": 0.4444444444444444,
+      "sourceIndex": 14,
+      "targetIndex": 10
+    },
+    {
+      "source": "Shotaro",
+      "target": "Xiaojun",
+      "weight": 5,
+      "weight_prop": 0.5555555555555556,
+      "sourceIndex": 14,
+      "targetIndex": 11
+    },
+    {
+      "source": "Shotaro",
+      "target": "Hendery",
+      "weight": 5,
+      "weight_prop": 0.5555555555555556,
+      "sourceIndex": 14,
+      "targetIndex": 12
+    },
+    {
+      "source": "Shotaro",
+      "target": "Yangyang",
+      "weight": 4,
+      "weight_prop": 0.4444444444444444,
+      "sourceIndex": 14,
+      "targetIndex": 13
+    },
+    {
+      "source": "Shotaro",
+      "target": "Sungchan",
+      "weight": 3,
+      "weight_prop": 0.3333333333333333,
+      "sourceIndex": 14,
+      "targetIndex": 15
+    },
+    {
+      "source": "Shotaro",
+      "target": "Renjun",
+      "weight": 2,
+      "weight_prop": 0.2222222222222222,
+      "sourceIndex": 14,
+      "targetIndex": 16
+    },
+    {
+      "source": "Shotaro",
+      "target": "Jeno",
+      "weight": 3,
+      "weight_prop": 0.3333333333333333,
+      "sourceIndex": 14,
+      "targetIndex": 17
+    },
+    {
+      "source": "Shotaro",
+      "target": "Jaemin",
+      "weight": 6,
+      "weight_prop": 0.6666666666666666,
+      "sourceIndex": 14,
+      "targetIndex": 18
+    },
+    {
+      "source": "Shotaro",
+      "target": "Chenle",
+      "weight": 6,
+      "weight_prop": 0.6666666666666666,
+      "sourceIndex": 14,
+      "targetIndex": 19
+    },
+    {
+      "source": "Shotaro",
+      "target": "Jisung",
+      "weight": 5,
+      "weight_prop": 0.5555555555555556,
+      "sourceIndex": 14,
+      "targetIndex": 20
+    },
+    {
+      "source": "Shotaro",
+      "target": "Mark",
+      "weight": 4,
+      "weight_prop": 0.4444444444444444,
+      "sourceIndex": 14,
+      "targetIndex": 21
+    },
+    {
+      "source": "Shotaro",
+      "target": "Haechan",
+      "weight": 3,
+      "weight_prop": 0.3333333333333333,
+      "sourceIndex": 14,
+      "targetIndex": 22
+    },
+    {
+      "source": "Sungchan",
+      "target": "Taeil",
+      "weight": 3,
+      "weight_prop": 0.375,
+      "sourceIndex": 15,
+      "targetIndex": 0
+    },
+    {
+      "source": "Sungchan",
+      "target": "Johnny",
+      "weight": 4,
+      "weight_prop": 0.5,
+      "sourceIndex": 15,
+      "targetIndex": 1
+    },
+    {
+      "source": "Sungchan",
+      "target": "Taeyong",
+      "weight": 4,
+      "weight_prop": 0.5,
+      "sourceIndex": 15,
+      "targetIndex": 2
+    },
+    {
+      "source": "Sungchan",
+      "target": "Yuta",
+      "weight": 2,
+      "weight_prop": 0.25,
+      "sourceIndex": 15,
+      "targetIndex": 3
+    },
+    {
+      "source": "Sungchan",
+      "target": "Doyoung",
+      "weight": 4,
+      "weight_prop": 0.5,
+      "sourceIndex": 15,
+      "targetIndex": 4
+    },
+    {
+      "source": "Sungchan",
+      "target": "Jaehyun",
+      "weight": 4,
+      "weight_prop": 0.5,
+      "sourceIndex": 15,
+      "targetIndex": 5
+    },
+    {
+      "source": "Sungchan",
+      "target": "Jungwoo",
+      "weight": 3,
+      "weight_prop": 0.375,
+      "sourceIndex": 15,
+      "targetIndex": 6
+    },
+    {
+      "source": "Sungchan",
+      "target": "Winwin",
+      "weight": 3,
+      "weight_prop": 0.375,
+      "sourceIndex": 15,
+      "targetIndex": 7
+    },
+    {
+      "source": "Sungchan",
+      "target": "Kun",
+      "weight": 3,
+      "weight_prop": 0.375,
+      "sourceIndex": 15,
+      "targetIndex": 8
+    },
+    {
+      "source": "Sungchan",
+      "target": "Ten",
+      "weight": 4,
+      "weight_prop": 0.5,
+      "sourceIndex": 15,
+      "targetIndex": 9
+    },
+    {
+      "source": "Sungchan",
+      "target": "Lucas",
+      "weight": 2,
+      "weight_prop": 0.25,
+      "sourceIndex": 15,
+      "targetIndex": 10
+    },
+    {
+      "source": "Sungchan",
+      "target": "Xiaojun",
+      "weight": 3,
+      "weight_prop": 0.375,
+      "sourceIndex": 15,
+      "targetIndex": 11
+    },
+    {
+      "source": "Sungchan",
+      "target": "Hendery",
+      "weight": 4,
+      "weight_prop": 0.5,
+      "sourceIndex": 15,
+      "targetIndex": 12
+    },
+    {
+      "source": "Sungchan",
+      "target": "Yangyang",
+      "weight": 5,
+      "weight_prop": 0.625,
+      "sourceIndex": 15,
+      "targetIndex": 13
+    },
+    {
+      "source": "Sungchan",
+      "target": "Shotaro",
+      "weight": 3,
+      "weight_prop": 0.375,
+      "sourceIndex": 15,
+      "targetIndex": 14
+    },
+    {
+      "source": "Sungchan",
+      "target": "Renjun",
+      "weight": 3,
+      "weight_prop": 0.375,
+      "sourceIndex": 15,
+      "targetIndex": 16
+    },
+    {
+      "source": "Sungchan",
+      "target": "Jeno",
+      "weight": 5,
+      "weight_prop": 0.625,
+      "sourceIndex": 15,
+      "targetIndex": 17
+    },
+    {
+      "source": "Sungchan",
+      "target": "Jaemin",
+      "weight": 3,
+      "weight_prop": 0.375,
+      "sourceIndex": 15,
+      "targetIndex": 18
+    },
+    {
+      "source": "Sungchan",
+      "target": "Chenle",
+      "weight": 3,
+      "weight_prop": 0.375,
+      "sourceIndex": 15,
+      "targetIndex": 19
+    },
+    {
+      "source": "Sungchan",
+      "target": "Jisung",
+      "weight": 2,
+      "weight_prop": 0.25,
+      "sourceIndex": 15,
+      "targetIndex": 20
+    },
+    {
+      "source": "Sungchan",
+      "target": "Mark",
+      "weight": 6,
+      "weight_prop": 0.75,
+      "sourceIndex": 15,
+      "targetIndex": 21
+    },
+    {
+      "source": "Sungchan",
+      "target": "Haechan",
+      "weight": 4,
+      "weight_prop": 0.5,
+      "sourceIndex": 15,
+      "targetIndex": 22
+    },
+    {
+      "source": "Renjun",
+      "target": "Taeil",
+      "weight": 8,
+      "weight_prop": 0.10126582278481013,
+      "sourceIndex": 16,
+      "targetIndex": 0
+    },
+    {
+      "source": "Renjun",
+      "target": "Johnny",
+      "weight": 5,
+      "weight_prop": 0.06329113924050633,
+      "sourceIndex": 16,
+      "targetIndex": 1
+    },
+    {
+      "source": "Renjun",
+      "target": "Taeyong",
+      "weight": 2,
+      "weight_prop": 0.02531645569620253,
+      "sourceIndex": 16,
+      "targetIndex": 2
+    },
+    {
+      "source": "Renjun",
+      "target": "Yuta",
+      "weight": 6,
+      "weight_prop": 0.0759493670886076,
+      "sourceIndex": 16,
+      "targetIndex": 3
+    },
+    {
+      "source": "Renjun",
+      "target": "Doyoung",
+      "weight": 6,
+      "weight_prop": 0.0759493670886076,
+      "sourceIndex": 16,
+      "targetIndex": 4
+    },
+    {
+      "source": "Renjun",
+      "target": "Jaehyun",
+      "weight": 2,
+      "weight_prop": 0.02531645569620253,
+      "sourceIndex": 16,
+      "targetIndex": 5
+    },
+    {
+      "source": "Renjun",
+      "target": "Jungwoo",
+      "weight": 3,
+      "weight_prop": 0.0379746835443038,
+      "sourceIndex": 16,
+      "targetIndex": 6
+    },
+    {
+      "source": "Renjun",
+      "target": "Winwin",
+      "weight": 2,
+      "weight_prop": 0.02531645569620253,
+      "sourceIndex": 16,
+      "targetIndex": 7
+    },
+    {
+      "source": "Renjun",
+      "target": "Kun",
+      "weight": 5,
+      "weight_prop": 0.06329113924050633,
+      "sourceIndex": 16,
+      "targetIndex": 8
+    },
+    {
+      "source": "Renjun",
+      "target": "Ten",
+      "weight": 3,
+      "weight_prop": 0.0379746835443038,
+      "sourceIndex": 16,
+      "targetIndex": 9
+    },
+    {
+      "source": "Renjun",
+      "target": "Lucas",
+      "weight": 3,
+      "weight_prop": 0.0379746835443038,
+      "sourceIndex": 16,
+      "targetIndex": 10
+    },
+    {
+      "source": "Renjun",
+      "target": "Xiaojun",
+      "weight": 4,
+      "weight_prop": 0.05063291139240506,
+      "sourceIndex": 16,
+      "targetIndex": 11
+    },
+    {
+      "source": "Renjun",
+      "target": "Hendery",
+      "weight": 3,
+      "weight_prop": 0.0379746835443038,
+      "sourceIndex": 16,
+      "targetIndex": 12
+    },
+    {
+      "source": "Renjun",
+      "target": "Yangyang",
+      "weight": 3,
+      "weight_prop": 0.0379746835443038,
+      "sourceIndex": 16,
+      "targetIndex": 13
+    },
+    {
+      "source": "Renjun",
+      "target": "Shotaro",
+      "weight": 2,
+      "weight_prop": 0.02531645569620253,
+      "sourceIndex": 16,
+      "targetIndex": 14
+    },
+    {
+      "source": "Renjun",
+      "target": "Sungchan",
+      "weight": 3,
+      "weight_prop": 0.0379746835443038,
+      "sourceIndex": 16,
+      "targetIndex": 15
+    },
+    {
+      "source": "Renjun",
+      "target": "Jeno",
+      "weight": 72,
+      "weight_prop": 0.9113924050632911,
+      "sourceIndex": 16,
+      "targetIndex": 17
+    },
+    {
+      "source": "Renjun",
+      "target": "Jaemin",
+      "weight": 62,
+      "weight_prop": 0.7848101265822784,
+      "sourceIndex": 16,
+      "targetIndex": 18
+    },
+    {
+      "source": "Renjun",
+      "target": "Chenle",
+      "weight": 74,
+      "weight_prop": 0.9367088607594937,
+      "sourceIndex": 16,
+      "targetIndex": 19
+    },
+    {
+      "source": "Renjun",
+      "target": "Jisung",
+      "weight": 72,
+      "weight_prop": 0.9113924050632911,
+      "sourceIndex": 16,
+      "targetIndex": 20
+    },
+    {
+      "source": "Renjun",
+      "target": "Mark",
+      "weight": 57,
+      "weight_prop": 0.7215189873417721,
+      "sourceIndex": 16,
+      "targetIndex": 21
+    },
+    {
+      "source": "Renjun",
+      "target": "Haechan",
+      "weight": 73,
+      "weight_prop": 0.9240506329113924,
+      "sourceIndex": 16,
+      "targetIndex": 22
+    },
+    {
+      "source": "Jeno",
+      "target": "Taeil",
+      "weight": 3,
+      "weight_prop": 0.0379746835443038,
+      "sourceIndex": 17,
+      "targetIndex": 0
+    },
+    {
+      "source": "Jeno",
+      "target": "Johnny",
+      "weight": 5,
+      "weight_prop": 0.06329113924050633,
+      "sourceIndex": 17,
+      "targetIndex": 1
+    },
+    {
+      "source": "Jeno",
+      "target": "Taeyong",
+      "weight": 6,
+      "weight_prop": 0.0759493670886076,
+      "sourceIndex": 17,
+      "targetIndex": 2
+    },
+    {
+      "source": "Jeno",
+      "target": "Yuta",
+      "weight": 5,
+      "weight_prop": 0.06329113924050633,
+      "sourceIndex": 17,
+      "targetIndex": 3
+    },
+    {
+      "source": "Jeno",
+      "target": "Doyoung",
+      "weight": 5,
+      "weight_prop": 0.06329113924050633,
+      "sourceIndex": 17,
+      "targetIndex": 4
+    },
+    {
+      "source": "Jeno",
+      "target": "Jaehyun",
+      "weight": 3,
+      "weight_prop": 0.0379746835443038,
+      "sourceIndex": 17,
+      "targetIndex": 5
+    },
+    {
+      "source": "Jeno",
+      "target": "Jungwoo",
+      "weight": 3,
+      "weight_prop": 0.0379746835443038,
+      "sourceIndex": 17,
+      "targetIndex": 6
+    },
+    {
+      "source": "Jeno",
+      "target": "Winwin",
+      "weight": 4,
+      "weight_prop": 0.05063291139240506,
+      "sourceIndex": 17,
+      "targetIndex": 7
+    },
+    {
+      "source": "Jeno",
+      "target": "Kun",
+      "weight": 2,
+      "weight_prop": 0.02531645569620253,
+      "sourceIndex": 17,
+      "targetIndex": 8
+    },
+    {
+      "source": "Jeno",
+      "target": "Ten",
+      "weight": 5,
+      "weight_prop": 0.06329113924050633,
+      "sourceIndex": 17,
+      "targetIndex": 9
+    },
+    {
+      "source": "Jeno",
+      "target": "Lucas",
+      "weight": 3,
+      "weight_prop": 0.0379746835443038,
+      "sourceIndex": 17,
+      "targetIndex": 10
+    },
+    {
+      "source": "Jeno",
+      "target": "Xiaojun",
+      "weight": 3,
+      "weight_prop": 0.0379746835443038,
+      "sourceIndex": 17,
+      "targetIndex": 11
+    },
+    {
+      "source": "Jeno",
+      "target": "Hendery",
+      "weight": 4,
+      "weight_prop": 0.05063291139240506,
+      "sourceIndex": 17,
+      "targetIndex": 12
+    },
+    {
+      "source": "Jeno",
+      "target": "Yangyang",
+      "weight": 7,
+      "weight_prop": 0.08860759493670886,
+      "sourceIndex": 17,
+      "targetIndex": 13
+    },
+    {
+      "source": "Jeno",
+      "target": "Shotaro",
+      "weight": 3,
+      "weight_prop": 0.0379746835443038,
+      "sourceIndex": 17,
+      "targetIndex": 14
+    },
+    {
+      "source": "Jeno",
+      "target": "Sungchan",
+      "weight": 5,
+      "weight_prop": 0.06329113924050633,
+      "sourceIndex": 17,
+      "targetIndex": 15
+    },
+    {
+      "source": "Jeno",
+      "target": "Renjun",
+      "weight": 72,
+      "weight_prop": 0.9113924050632911,
+      "sourceIndex": 17,
+      "targetIndex": 16
+    },
+    {
+      "source": "Jeno",
+      "target": "Jaemin",
+      "weight": 65,
+      "weight_prop": 0.8227848101265823,
+      "sourceIndex": 17,
+      "targetIndex": 18
+    },
+    {
+      "source": "Jeno",
+      "target": "Chenle",
+      "weight": 70,
+      "weight_prop": 0.8860759493670886,
+      "sourceIndex": 17,
+      "targetIndex": 19
+    },
+    {
+      "source": "Jeno",
+      "target": "Jisung",
+      "weight": 72,
+      "weight_prop": 0.9113924050632911,
+      "sourceIndex": 17,
+      "targetIndex": 20
+    },
+    {
+      "source": "Jeno",
+      "target": "Mark",
+      "weight": 64,
+      "weight_prop": 0.810126582278481,
+      "sourceIndex": 17,
+      "targetIndex": 21
+    },
+    {
+      "source": "Jeno",
+      "target": "Haechan",
+      "weight": 72,
+      "weight_prop": 0.9113924050632911,
+      "sourceIndex": 17,
+      "targetIndex": 22
+    },
+    {
+      "source": "Jaemin",
+      "target": "Taeil",
+      "weight": 3,
+      "weight_prop": 0.043478260869565216,
+      "sourceIndex": 18,
+      "targetIndex": 0
+    },
+    {
+      "source": "Jaemin",
+      "target": "Johnny",
+      "weight": 6,
+      "weight_prop": 0.08695652173913043,
+      "sourceIndex": 18,
+      "targetIndex": 1
+    },
+    {
+      "source": "Jaemin",
+      "target": "Taeyong",
+      "weight": 5,
+      "weight_prop": 0.07246376811594203,
+      "sourceIndex": 18,
+      "targetIndex": 2
+    },
+    {
+      "source": "Jaemin",
+      "target": "Yuta",
+      "weight": 5,
+      "weight_prop": 0.07246376811594203,
+      "sourceIndex": 18,
+      "targetIndex": 3
+    },
+    {
+      "source": "Jaemin",
+      "target": "Doyoung",
+      "weight": 7,
+      "weight_prop": 0.10144927536231885,
+      "sourceIndex": 18,
+      "targetIndex": 4
+    },
+    {
+      "source": "Jaemin",
+      "target": "Jaehyun",
+      "weight": 5,
+      "weight_prop": 0.07246376811594203,
+      "sourceIndex": 18,
+      "targetIndex": 5
+    },
+    {
+      "source": "Jaemin",
+      "target": "Jungwoo",
+      "weight": 5,
+      "weight_prop": 0.07246376811594203,
+      "sourceIndex": 18,
+      "targetIndex": 6
+    },
+    {
+      "source": "Jaemin",
+      "target": "Winwin",
+      "weight": 3,
+      "weight_prop": 0.043478260869565216,
+      "sourceIndex": 18,
+      "targetIndex": 7
+    },
+    {
+      "source": "Jaemin",
+      "target": "Kun",
+      "weight": 2,
+      "weight_prop": 0.028985507246376812,
+      "sourceIndex": 18,
+      "targetIndex": 8
+    },
+    {
+      "source": "Jaemin",
+      "target": "Ten",
+      "weight": 4,
+      "weight_prop": 0.057971014492753624,
+      "sourceIndex": 18,
+      "targetIndex": 9
+    },
+    {
+      "source": "Jaemin",
+      "target": "Lucas",
+      "weight": 4,
+      "weight_prop": 0.057971014492753624,
+      "sourceIndex": 18,
+      "targetIndex": 10
+    },
+    {
+      "source": "Jaemin",
+      "target": "Xiaojun",
+      "weight": 5,
+      "weight_prop": 0.07246376811594203,
+      "sourceIndex": 18,
+      "targetIndex": 11
+    },
+    {
+      "source": "Jaemin",
+      "target": "Hendery",
+      "weight": 4,
+      "weight_prop": 0.057971014492753624,
+      "sourceIndex": 18,
+      "targetIndex": 12
+    },
+    {
+      "source": "Jaemin",
+      "target": "Yangyang",
+      "weight": 4,
+      "weight_prop": 0.057971014492753624,
+      "sourceIndex": 18,
+      "targetIndex": 13
+    },
+    {
+      "source": "Jaemin",
+      "target": "Shotaro",
+      "weight": 6,
+      "weight_prop": 0.08695652173913043,
+      "sourceIndex": 18,
+      "targetIndex": 14
+    },
+    {
+      "source": "Jaemin",
+      "target": "Sungchan",
+      "weight": 3,
+      "weight_prop": 0.043478260869565216,
+      "sourceIndex": 18,
+      "targetIndex": 15
+    },
+    {
+      "source": "Jaemin",
+      "target": "Renjun",
+      "weight": 62,
+      "weight_prop": 0.8985507246376812,
+      "sourceIndex": 18,
+      "targetIndex": 16
+    },
+    {
+      "source": "Jaemin",
+      "target": "Jeno",
+      "weight": 65,
+      "weight_prop": 0.9420289855072463,
+      "sourceIndex": 18,
+      "targetIndex": 17
+    },
+    {
+      "source": "Jaemin",
+      "target": "Chenle",
+      "weight": 61,
+      "weight_prop": 0.8840579710144928,
+      "sourceIndex": 18,
+      "targetIndex": 19
+    },
+    {
+      "source": "Jaemin",
+      "target": "Jisung",
+      "weight": 64,
+      "weight_prop": 0.927536231884058,
+      "sourceIndex": 18,
+      "targetIndex": 20
+    },
+    {
+      "source": "Jaemin",
+      "target": "Mark",
+      "weight": 50,
+      "weight_prop": 0.7246376811594203,
+      "sourceIndex": 18,
+      "targetIndex": 21
+    },
+    {
+      "source": "Jaemin",
+      "target": "Haechan",
+      "weight": 61,
+      "weight_prop": 0.8840579710144928,
+      "sourceIndex": 18,
+      "targetIndex": 22
+    },
+    {
+      "source": "Chenle",
+      "target": "Taeil",
+      "weight": 7,
+      "weight_prop": 0.08641975308641975,
+      "sourceIndex": 19,
+      "targetIndex": 0
+    },
+    {
+      "source": "Chenle",
+      "target": "Johnny",
+      "weight": 5,
+      "weight_prop": 0.06172839506172839,
+      "sourceIndex": 19,
+      "targetIndex": 1
+    },
+    {
+      "source": "Chenle",
+      "target": "Taeyong",
+      "weight": 3,
+      "weight_prop": 0.037037037037037035,
+      "sourceIndex": 19,
+      "targetIndex": 2
+    },
+    {
+      "source": "Chenle",
+      "target": "Yuta",
+      "weight": 7,
+      "weight_prop": 0.08641975308641975,
+      "sourceIndex": 19,
+      "targetIndex": 3
+    },
+    {
+      "source": "Chenle",
+      "target": "Doyoung",
+      "weight": 5,
+      "weight_prop": 0.06172839506172839,
+      "sourceIndex": 19,
+      "targetIndex": 4
+    },
+    {
+      "source": "Chenle",
+      "target": "Jaehyun",
+      "weight": 6,
+      "weight_prop": 0.07407407407407407,
+      "sourceIndex": 19,
+      "targetIndex": 5
+    },
+    {
+      "source": "Chenle",
+      "target": "Jungwoo",
+      "weight": 7,
+      "weight_prop": 0.08641975308641975,
+      "sourceIndex": 19,
+      "targetIndex": 6
+    },
+    {
+      "source": "Chenle",
+      "target": "Winwin",
+      "weight": 2,
+      "weight_prop": 0.024691358024691357,
+      "sourceIndex": 19,
+      "targetIndex": 7
+    },
+    {
+      "source": "Chenle",
+      "target": "Kun",
+      "weight": 9,
+      "weight_prop": 0.1111111111111111,
+      "sourceIndex": 19,
+      "targetIndex": 8
+    },
+    {
+      "source": "Chenle",
+      "target": "Ten",
+      "weight": 2,
+      "weight_prop": 0.024691358024691357,
+      "sourceIndex": 19,
+      "targetIndex": 9
+    },
+    {
+      "source": "Chenle",
+      "target": "Lucas",
+      "weight": 2,
+      "weight_prop": 0.024691358024691357,
+      "sourceIndex": 19,
+      "targetIndex": 10
+    },
+    {
+      "source": "Chenle",
+      "target": "Xiaojun",
+      "weight": 3,
+      "weight_prop": 0.037037037037037035,
+      "sourceIndex": 19,
+      "targetIndex": 11
+    },
+    {
+      "source": "Chenle",
+      "target": "Hendery",
+      "weight": 6,
+      "weight_prop": 0.07407407407407407,
+      "sourceIndex": 19,
+      "targetIndex": 12
+    },
+    {
+      "source": "Chenle",
+      "target": "Yangyang",
+      "weight": 3,
+      "weight_prop": 0.037037037037037035,
+      "sourceIndex": 19,
+      "targetIndex": 13
+    },
+    {
+      "source": "Chenle",
+      "target": "Shotaro",
+      "weight": 6,
+      "weight_prop": 0.07407407407407407,
+      "sourceIndex": 19,
+      "targetIndex": 14
+    },
+    {
+      "source": "Chenle",
+      "target": "Sungchan",
+      "weight": 3,
+      "weight_prop": 0.037037037037037035,
+      "sourceIndex": 19,
+      "targetIndex": 15
+    },
+    {
+      "source": "Chenle",
+      "target": "Renjun",
+      "weight": 74,
+      "weight_prop": 0.9135802469135802,
+      "sourceIndex": 19,
+      "targetIndex": 16
+    },
+    {
+      "source": "Chenle",
+      "target": "Jeno",
+      "weight": 70,
+      "weight_prop": 0.8641975308641975,
+      "sourceIndex": 19,
+      "targetIndex": 17
+    },
+    {
+      "source": "Chenle",
+      "target": "Jaemin",
+      "weight": 61,
+      "weight_prop": 0.7530864197530864,
+      "sourceIndex": 19,
+      "targetIndex": 18
+    },
+    {
+      "source": "Chenle",
+      "target": "Jisung",
+      "weight": 75,
+      "weight_prop": 0.9259259259259259,
+      "sourceIndex": 19,
+      "targetIndex": 20
+    },
+    {
+      "source": "Chenle",
+      "target": "Mark",
+      "weight": 57,
+      "weight_prop": 0.7037037037037037,
+      "sourceIndex": 19,
+      "targetIndex": 21
+    },
+    {
+      "source": "Chenle",
+      "target": "Haechan",
+      "weight": 74,
+      "weight_prop": 0.9135802469135802,
+      "sourceIndex": 19,
+      "targetIndex": 22
+    },
+    {
+      "source": "Jisung",
+      "target": "Taeil",
+      "weight": 5,
+      "weight_prop": 0.06329113924050633,
+      "sourceIndex": 20,
+      "targetIndex": 0
+    },
+    {
+      "source": "Jisung",
+      "target": "Johnny",
+      "weight": 7,
+      "weight_prop": 0.08860759493670886,
+      "sourceIndex": 20,
+      "targetIndex": 1
+    },
+    {
+      "source": "Jisung",
+      "target": "Taeyong",
+      "weight": 4,
+      "weight_prop": 0.05063291139240506,
+      "sourceIndex": 20,
+      "targetIndex": 2
+    },
+    {
+      "source": "Jisung",
+      "target": "Yuta",
+      "weight": 7,
+      "weight_prop": 0.08860759493670886,
+      "sourceIndex": 20,
+      "targetIndex": 3
+    },
+    {
+      "source": "Jisung",
+      "target": "Doyoung",
+      "weight": 4,
+      "weight_prop": 0.05063291139240506,
+      "sourceIndex": 20,
+      "targetIndex": 4
+    },
+    {
+      "source": "Jisung",
+      "target": "Jaehyun",
+      "weight": 4,
+      "weight_prop": 0.05063291139240506,
+      "sourceIndex": 20,
+      "targetIndex": 5
+    },
+    {
+      "source": "Jisung",
+      "target": "Jungwoo",
+      "weight": 6,
+      "weight_prop": 0.0759493670886076,
+      "sourceIndex": 20,
+      "targetIndex": 6
+    },
+    {
+      "source": "Jisung",
+      "target": "Winwin",
+      "weight": 3,
+      "weight_prop": 0.0379746835443038,
+      "sourceIndex": 20,
+      "targetIndex": 7
+    },
+    {
+      "source": "Jisung",
+      "target": "Kun",
+      "weight": 5,
+      "weight_prop": 0.06329113924050633,
+      "sourceIndex": 20,
+      "targetIndex": 8
+    },
+    {
+      "source": "Jisung",
+      "target": "Ten",
+      "weight": 5,
+      "weight_prop": 0.06329113924050633,
+      "sourceIndex": 20,
+      "targetIndex": 9
+    },
+    {
+      "source": "Jisung",
+      "target": "Lucas",
+      "weight": 3,
+      "weight_prop": 0.0379746835443038,
+      "sourceIndex": 20,
+      "targetIndex": 10
+    },
+    {
+      "source": "Jisung",
+      "target": "Xiaojun",
+      "weight": 2,
+      "weight_prop": 0.02531645569620253,
+      "sourceIndex": 20,
+      "targetIndex": 11
+    },
+    {
+      "source": "Jisung",
+      "target": "Hendery",
+      "weight": 6,
+      "weight_prop": 0.0759493670886076,
+      "sourceIndex": 20,
+      "targetIndex": 12
+    },
+    {
+      "source": "Jisung",
+      "target": "Yangyang",
+      "weight": 3,
+      "weight_prop": 0.0379746835443038,
+      "sourceIndex": 20,
+      "targetIndex": 13
+    },
+    {
+      "source": "Jisung",
+      "target": "Shotaro",
+      "weight": 5,
+      "weight_prop": 0.06329113924050633,
+      "sourceIndex": 20,
+      "targetIndex": 14
+    },
+    {
+      "source": "Jisung",
+      "target": "Sungchan",
+      "weight": 2,
+      "weight_prop": 0.02531645569620253,
+      "sourceIndex": 20,
+      "targetIndex": 15
+    },
+    {
+      "source": "Jisung",
+      "target": "Renjun",
+      "weight": 72,
+      "weight_prop": 0.9113924050632911,
+      "sourceIndex": 20,
+      "targetIndex": 16
+    },
+    {
+      "source": "Jisung",
+      "target": "Jeno",
+      "weight": 72,
+      "weight_prop": 0.9113924050632911,
+      "sourceIndex": 20,
+      "targetIndex": 17
+    },
+    {
+      "source": "Jisung",
+      "target": "Jaemin",
+      "weight": 64,
+      "weight_prop": 0.810126582278481,
+      "sourceIndex": 20,
+      "targetIndex": 18
+    },
+    {
+      "source": "Jisung",
+      "target": "Chenle",
+      "weight": 75,
+      "weight_prop": 0.9493670886075949,
+      "sourceIndex": 20,
+      "targetIndex": 19
+    },
+    {
+      "source": "Jisung",
+      "target": "Mark",
+      "weight": 58,
+      "weight_prop": 0.7341772151898734,
+      "sourceIndex": 20,
+      "targetIndex": 21
+    },
+    {
+      "source": "Jisung",
+      "target": "Haechan",
+      "weight": 72,
+      "weight_prop": 0.9113924050632911,
+      "sourceIndex": 20,
+      "targetIndex": 22
+    },
+    {
+      "source": "Mark",
+      "target": "Taeil",
+      "weight": 100,
+      "weight_prop": 0.5181347150259067,
+      "sourceIndex": 21,
+      "targetIndex": 0
+    },
+    {
+      "source": "Mark",
+      "target": "Johnny",
+      "weight": 92,
+      "weight_prop": 0.47668393782383417,
+      "sourceIndex": 21,
+      "targetIndex": 1
+    },
+    {
+      "source": "Mark",
+      "target": "Taeyong",
+      "weight": 130,
+      "weight_prop": 0.6735751295336787,
+      "sourceIndex": 21,
+      "targetIndex": 2
+    },
+    {
+      "source": "Mark",
+      "target": "Yuta",
+      "weight": 100,
+      "weight_prop": 0.5181347150259067,
+      "sourceIndex": 21,
+      "targetIndex": 3
+    },
+    {
+      "source": "Mark",
+      "target": "Doyoung",
+      "weight": 102,
+      "weight_prop": 0.5284974093264249,
+      "sourceIndex": 21,
+      "targetIndex": 4
+    },
+    {
+      "source": "Mark",
+      "target": "Jaehyun",
+      "weight": 105,
+      "weight_prop": 0.5440414507772021,
+      "sourceIndex": 21,
+      "targetIndex": 5
+    },
+    {
+      "source": "Mark",
+      "target": "Jungwoo",
+      "weight": 77,
+      "weight_prop": 0.39896373056994816,
+      "sourceIndex": 21,
+      "targetIndex": 6
+    },
+    {
+      "source": "Mark",
+      "target": "Winwin",
+      "weight": 37,
+      "weight_prop": 0.19170984455958548,
+      "sourceIndex": 21,
+      "targetIndex": 7
+    },
+    {
+      "source": "Mark",
+      "target": "Kun",
+      "weight": 2,
+      "weight_prop": 0.010362694300518135,
+      "sourceIndex": 21,
+      "targetIndex": 8
+    },
+    {
+      "source": "Mark",
+      "target": "Ten",
+      "weight": 24,
+      "weight_prop": 0.12435233160621761,
+      "sourceIndex": 21,
+      "targetIndex": 9
+    },
+    {
+      "source": "Mark",
+      "target": "Lucas",
+      "weight": 26,
+      "weight_prop": 0.13471502590673576,
+      "sourceIndex": 21,
+      "targetIndex": 10
+    },
+    {
+      "source": "Mark",
+      "target": "Xiaojun",
+      "weight": 3,
+      "weight_prop": 0.015544041450777202,
+      "sourceIndex": 21,
+      "targetIndex": 11
+    },
+    {
+      "source": "Mark",
+      "target": "Hendery",
+      "weight": 5,
+      "weight_prop": 0.025906735751295335,
+      "sourceIndex": 21,
+      "targetIndex": 12
+    },
+    {
+      "source": "Mark",
+      "target": "Yangyang",
+      "weight": 8,
+      "weight_prop": 0.04145077720207254,
+      "sourceIndex": 21,
+      "targetIndex": 13
+    },
+    {
+      "source": "Mark",
+      "target": "Shotaro",
+      "weight": 4,
+      "weight_prop": 0.02072538860103627,
+      "sourceIndex": 21,
+      "targetIndex": 14
+    },
+    {
+      "source": "Mark",
+      "target": "Sungchan",
+      "weight": 6,
+      "weight_prop": 0.031088082901554404,
+      "sourceIndex": 21,
+      "targetIndex": 15
+    },
+    {
+      "source": "Mark",
+      "target": "Renjun",
+      "weight": 57,
+      "weight_prop": 0.29533678756476683,
+      "sourceIndex": 21,
+      "targetIndex": 16
+    },
+    {
+      "source": "Mark",
+      "target": "Jeno",
+      "weight": 64,
+      "weight_prop": 0.3316062176165803,
+      "sourceIndex": 21,
+      "targetIndex": 17
+    },
+    {
+      "source": "Mark",
+      "target": "Jaemin",
+      "weight": 50,
+      "weight_prop": 0.25906735751295334,
+      "sourceIndex": 21,
+      "targetIndex": 18
+    },
+    {
+      "source": "Mark",
+      "target": "Chenle",
+      "weight": 57,
+      "weight_prop": 0.29533678756476683,
+      "sourceIndex": 21,
+      "targetIndex": 19
+    },
+    {
+      "source": "Mark",
+      "target": "Jisung",
+      "weight": 58,
+      "weight_prop": 0.3005181347150259,
+      "sourceIndex": 21,
+      "targetIndex": 20
+    },
+    {
+      "source": "Mark",
+      "target": "Haechan",
+      "weight": 154,
+      "weight_prop": 0.7979274611398963,
+      "sourceIndex": 21,
+      "targetIndex": 22
+    },
+    {
+      "source": "Haechan",
+      "target": "Taeil",
+      "weight": 106,
+      "weight_prop": 0.5921787709497207,
+      "sourceIndex": 22,
+      "targetIndex": 0
+    },
+    {
+      "source": "Haechan",
+      "target": "Johnny",
+      "weight": 91,
+      "weight_prop": 0.5083798882681564,
+      "sourceIndex": 22,
+      "targetIndex": 1
+    },
+    {
+      "source": "Haechan",
+      "target": "Taeyong",
+      "weight": 97,
+      "weight_prop": 0.5418994413407822,
+      "sourceIndex": 22,
+      "targetIndex": 2
+    },
+    {
+      "source": "Haechan",
+      "target": "Yuta",
+      "weight": 100,
+      "weight_prop": 0.5586592178770949,
+      "sourceIndex": 22,
+      "targetIndex": 3
+    },
+    {
+      "source": "Haechan",
+      "target": "Doyoung",
+      "weight": 101,
+      "weight_prop": 0.5642458100558659,
+      "sourceIndex": 22,
+      "targetIndex": 4
+    },
+    {
+      "source": "Haechan",
+      "target": "Jaehyun",
+      "weight": 102,
+      "weight_prop": 0.5698324022346368,
+      "sourceIndex": 22,
+      "targetIndex": 5
+    },
+    {
+      "source": "Haechan",
+      "target": "Jungwoo",
+      "weight": 75,
+      "weight_prop": 0.41899441340782123,
+      "sourceIndex": 22,
+      "targetIndex": 6
+    },
+    {
+      "source": "Haechan",
+      "target": "Winwin",
+      "weight": 36,
+      "weight_prop": 0.2011173184357542,
+      "sourceIndex": 22,
+      "targetIndex": 7
+    },
+    {
+      "source": "Haechan",
+      "target": "Kun",
+      "weight": 5,
+      "weight_prop": 0.027932960893854747,
+      "sourceIndex": 22,
+      "targetIndex": 8
+    },
+    {
+      "source": "Haechan",
+      "target": "Ten",
+      "weight": 6,
+      "weight_prop": 0.0335195530726257,
+      "sourceIndex": 22,
+      "targetIndex": 9
+    },
+    {
+      "source": "Haechan",
+      "target": "Lucas",
+      "weight": 3,
+      "weight_prop": 0.01675977653631285,
+      "sourceIndex": 22,
+      "targetIndex": 10
+    },
+    {
+      "source": "Haechan",
+      "target": "Xiaojun",
+      "weight": 4,
+      "weight_prop": 0.0223463687150838,
+      "sourceIndex": 22,
+      "targetIndex": 11
+    },
+    {
+      "source": "Haechan",
+      "target": "Hendery",
+      "weight": 2,
+      "weight_prop": 0.0111731843575419,
+      "sourceIndex": 22,
+      "targetIndex": 12
+    },
+    {
+      "source": "Haechan",
+      "target": "Yangyang",
+      "weight": 4,
+      "weight_prop": 0.0223463687150838,
+      "sourceIndex": 22,
+      "targetIndex": 13
+    },
+    {
+      "source": "Haechan",
+      "target": "Shotaro",
+      "weight": 3,
+      "weight_prop": 0.01675977653631285,
+      "sourceIndex": 22,
+      "targetIndex": 14
+    },
+    {
+      "source": "Haechan",
+      "target": "Sungchan",
+      "weight": 4,
+      "weight_prop": 0.0223463687150838,
+      "sourceIndex": 22,
+      "targetIndex": 15
+    },
+    {
+      "source": "Haechan",
+      "target": "Renjun",
+      "weight": 73,
+      "weight_prop": 0.40782122905027934,
+      "sourceIndex": 22,
+      "targetIndex": 16
+    },
+    {
+      "source": "Haechan",
+      "target": "Jeno",
+      "weight": 72,
+      "weight_prop": 0.4022346368715084,
+      "sourceIndex": 22,
+      "targetIndex": 17
+    },
+    {
+      "source": "Haechan",
+      "target": "Jaemin",
+      "weight": 61,
+      "weight_prop": 0.3407821229050279,
+      "sourceIndex": 22,
+      "targetIndex": 18
+    },
+    {
+      "source": "Haechan",
+      "target": "Chenle",
+      "weight": 74,
+      "weight_prop": 0.4134078212290503,
+      "sourceIndex": 22,
+      "targetIndex": 19
+    },
+    {
+      "source": "Haechan",
+      "target": "Jisung",
+      "weight": 72,
+      "weight_prop": 0.4022346368715084,
+      "sourceIndex": 22,
+      "targetIndex": 20
+    },
+    {
+      "source": "Haechan",
+      "target": "Mark",
+      "weight": 154,
+      "weight_prop": 0.8603351955307262,
+      "sourceIndex": 22,
+      "targetIndex": 21
+    }
+  ]
+}

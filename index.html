@@ -1,6 +1,7 @@
 <html>
   <head>
     <title>INFO 4310 - HW 4</title>
+    <link rel="icon" type="image/x-icon" href="favicon.svg">
     <script src="https://d3js.org/d3.v7.min.js"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap">
 
@@ -87,11 +88,19 @@
         gap: 1em;
         margin: auto;
         padding: 1em;
+        padding-top: 2em;
       }
 
       .legend-row {
         display: flex;
         align-items: center;
+      }
+
+      .notes {
+        font-size: 0.75em;
+        font-style: italic;
+        color: gray;
+        padding-top: 0.5em;
       }
 
       .group_bubble {
@@ -104,6 +113,10 @@
 
       #detail-sidebar-div {
         margin-left: 20px;
+      }
+
+      #bar-instructions {
+        height: 2em;
       }
 
       #name {
@@ -173,7 +186,7 @@
               <p>NCT is a Korean pop group consisting of 26 members (23 shown). Highly active since 2016, NCT has released over 400 songs and has recorded over 32 million album sales to date.</p>
               <p>NCT's most unique feature is their use of subunits, which include given subsets of the band's members and often promote music separately. However, some band members belong to multiple subunits, and members frequently collaborate across subunits on specific songs.</p>
               <p>The result is a complex network credited with giving NCT a reputation of being highly versatile and experimental as a group.</p>
-              <p>To explore the network, hover over nodes, zoom, and pan. To explore a person's song collaborations in detail, click on a node and hover over the resulting bar chart. </p>
+              <p>To explore the network, hover over circles, zoom, and pan. To explore a person's song collaborations in detail, click on a circle and hover over the resulting bar chart. </p>
               <div id="legend">
                 <p>Subunit Legend:</p>
                 <div id="legend-groups">
@@ -198,6 +211,7 @@
                     <p>No Subunit</p>
                   </div>
                 </div>
+                <div class="notes">Circles are sized by the total number of songs that person has appeared in.</div>
               </div>
             </div>
             <div id="detail-sidebar-div">
@@ -221,6 +235,7 @@
       //convert 'Date' string into datetime 
       var parseTime = d3.timeParse("%m/%d/%Y");
       songs.forEach(d => {
+          d['Song Title'] = d['Song Title'].toString()
           d.datetime = parseTime(d.Date)
       })
       
@@ -321,6 +336,7 @@
             if ((d[0] === e.target.name && e.source.name === selectedNode[0].name) || (d[0] === e.source.name && e.target.name === selectedNode[0].name)) {
               removeTable(); //remove the old table
               d3.select('#tabletitle').text(`Songs ${d3.select('#name').text()} shares with ${d[0]}`)
+              e.sub_songs = e.sub_songs.filter(array => array <= songs_sorted.length - 1)
               updateSongTable(e.sub_songs)
             }
           })
@@ -349,7 +365,6 @@
                                         // .strength(d=> d.weight)
                                         // .strength (function (d) {return (d.weight)})
                                         .strength(d => d.weight*0.01)
-
                 )
                 .force("repulse", d3.forceManyBody().strength(-5000)) 
                 .force("center", d3.forceCenter(width/2.0, height/2.0));
@@ -398,16 +413,17 @@
 
         // handle mouseout of nodes
         nodeGroups.on("mouseout", function(event, d) {
-          
             if (!d3.select("#detail-sidebar").classed("clicked")) {
               clearSidebar();
               resetNetwork();
               d3.select("#intro").classed("hidden", false);
+              d3.select("#detail-sidebar").classed("clicked", false)
             }
           });
 
         nodeGroups.on("click", function(event, d) {
           d3.select("#intro").classed("hidden", true);
+          d3.select("#detail-sidebar").classed("clicked", true);
           resetNetwork();
           highlightNetwork(d);
           clickUpdate(d.name);
@@ -444,6 +460,17 @@
           nodeGroups.classed('unconnected-node', false)
           d3.selectAll("path.link").classed('hovered-arc', false).lower().attr("stroke", "rgb(231, 231, 231)")
         }
+
+        d3.select("#graph").on("click", function(event, d) {
+        if (!event.target.classList.contains("clickable")) {
+          if (d3.select("#detail-sidebar").classed("clicked")) {
+            clearSidebar();
+            resetNetwork();
+            d3.select("#intro").classed("hidden", false);
+            d3.select("#detail-sidebar").classed("clicked", false)
+          }
+        }
+      });
       }
       render();
 
@@ -468,24 +495,28 @@
             .data(arcs)
             .enter()
             .append("g")
-            .attr("class", "arc");
+            .attr("class", "arc")
+            .attr("class", "clickable");
 
         arcPaths.append("path")
             .attr("d", arc)
-            .attr("fill", d=> color(d.data));
+            .attr("fill", d=> color(d.data))
+            .attr("class", "clickable");
 
         container.append("circle")
             .attr("cx", 0)
             .attr("cy", 0)
             .attr("r", radius * 0.8)
             .attr("fill", "white")
-            .attr("class", "filler");
+            .attr("class", "filler")
+            .attr("class", "clickable");
 
         container.append("text")
             .attr("class", "node-label")
             .attr("text-anchor", "middle")
             .attr("dy", "0.35em")
-            .text(d => d.name);
+            .text(d => d.name)
+            .attr("class", "clickable");
             
         container.attr("x", -50)
                   .attr("y", -50)
@@ -555,7 +586,6 @@
       }
 
       function clearSidebar() {
-        if (!d3.select("#detail-sidebar").classed("clicked")) {
           d3.select("#name").text("");
           d3.select("#groups").text("");
           d3.select('#position').text("")
@@ -564,7 +594,7 @@
           d3.select("#tabletitle").text("")
           d3.selectAll('#barchart g').remove()
           removeTable();
-        }
+        
       }
 
       //remove barchart hover table 
@@ -593,7 +623,8 @@
         //get the shared_song details based on the parameter that has only the indexes 
         shared_songs_detailed = []
         shared_songs.forEach(i=>{
-          shared_songs_detailed.push(songs_sorted[i])
+          
+          if (i <= songs_sorted.length - 1) {shared_songs_detailed.push(songs_sorted[i])}
         })
 
         //use shared_songs_detailed to populate the table 
