@@ -200,12 +200,12 @@
 
       const colorScale = {"NCT 127": "#e76f51", "NCT DREAM": "#e9c46a", "WayV": "#2a9d8f", "SuperM": "#F4A261", "No Subunit": "#264653"}
       const color = d3.scaleOrdinal().domain(["NCT 127", "NCT DREAM", "WayV", "SuperM", "No Subunit"]).range(["#e76f51", "#e9c46a", "#2a9d8f", "#F4A261", "#264653"]);
-      // console.log(color('No Subunit'))
+
+      const weightExtent = d3.extent(nodes, d => d.weight);
+      const weightScale = d3.scaleLinear().domain(weightExtent).range([90, 150]);
 
       var plotZoom = d3.zoom().on("zoom", plotZoomed);
       d3.select("#graph").call(plotZoom);
-
-      console.log(nodes, links)
 
       // bar chart ------------------------------------------------------------------
       const barchart = d3.select("svg#barchart");
@@ -254,8 +254,6 @@
                         .style("text-anchor", "end")
                         .attr("dx", "-.8em")
                         .attr("dy", ".15em").attr("transform", "rotate(-65)")
-
-        console.log(nodes)
         
         chartArea.selectAll('rect.bar').data(connections)
                   .join('rect').attr('class','bar')
@@ -268,33 +266,22 @@
                   .attr("width", membersXAxisScale.bandwidth())
                   .attr("name", d => d[0]);
 
-
          //handle mouseover of barchart bars 
         let barchartBars = chartArea.selectAll("rect.bar"); 
         barchartBars.on("mouseover", function(event, d) { 
+          barchartBars.style("fill", (d) => { 
+                 return color(nodes.filter(node => node.name == d[0])[0].groups[0])
+               })
           d3.select(this).style("fill", "red")
+    
           links.filter(e => {
             if ((d[0] === e.target.name && e.source.name === selectedNode[0].name) || (d[0] === e.source.name && e.target.name === selectedNode[0].name)) {
-              console.log(e.sub_songs)
-
               removeTable(); //remove the old table
               d3.select('#tabletitle').text(`Songs ${d3.select('#name').text()} shares with ${d[0]}`)
               updateSongTable(e.sub_songs)
-              
-              
             }
-            
           })
-
         });
-        //handle mouseout of barchart bars
-        barchartBars.on('mouseout', function(event, d){
-          d3.select(this).style("fill", (d) => { 
-                 
-                    return color(nodes.filter(node => node.name == d[0])[0].groups[0])
-                  }) 
-        })
-
       }
 
       // create list of # of songs each node shares with others as "connections"
@@ -310,25 +297,19 @@
         })
         n.connections=node_collab
       })
-      console.log("new", nodes)
 
       var sim = d3.forceSimulation()
                 .nodes(nodes)
-                .force("links", d3.forceLink()   // Keep nodes that are connected near each other
-                                        .links(links)           // give the force an array of source/target objects
+                .force("links", d3.forceLink()  
+                                        .links(links)           
                                         .id( d => d['name'] )
                                         // .strength(d=> d.weight)
                                         // .strength (function (d) {return (d.weight)})
                                         .strength(d => d.weight*0.01)
-                                        // .distance(d=>console.log(d))
+
                 )
-
-                                                // if source and target don't provide array indices for nodes, .id will tell the force what to look for in the nodes when it is trying to connect things together. Provide a getter function for _node elements_
-                .force("repulse", d3.forceManyBody().strength(-5000) ) // electrostatic repulsion between all nodes to space them out
-                .force("center", d3.forceCenter(width/2.0, height/2.0)) // centering force to make sure points don't fly away completely
-                //.on("tick", render)
-                ;
-
+                .force("repulse", d3.forceManyBody().strength(-5000)) 
+                .force("center", d3.forceCenter(width/2.0, height/2.0));
         while (sim.alpha() > 0.01) { 
           sim.tick(); 
         }
@@ -351,19 +332,14 @@
             return "M" + d.source.x + "," + d.source.y + "A" + dr + "," + dr + " 0 0,1 " + d.target.x + "," + d.target.y;
             });
 
-
         //  data join for nodes
         let circles = viewport.selectAll(".node").data(nodes)
               .join(
                   enter => {
                     const nodeGroup = enter.append("g")
                       .attr("class", "node");
-
                       nodeGroup.each(function(d) {
-                          createNodeDonut(d3.select(this), d.groups);
-                          if(d.groups.length==0){
-                            createNodeDonut(d3.select(this), ['none'])
-                          }
+                          createNodeDonut(d3.select(this), d.groups, d.weight);
                       });
                   })
                 
@@ -431,10 +407,12 @@
         viewport.attr("transform", event.transform);
       }
 
-      function createNodeDonut(container, groups) {
-        const donutWidth = 120;
-        const donutHeight = 120;
+      function createNodeDonut(container, groups, weight) {
+        const donutWidth = weightScale(weight);
+        const donutHeight = donutWidth;
         const radius = donutWidth / 2;
+
+        console.log(groups)
 
         const arc = d3.arc()
             .innerRadius(radius * 0.8) 
@@ -524,7 +502,6 @@
         d3.selectAll('#groups g').remove()
         //add new bubbles
         selectedNode[0].groups.forEach(d=>{
-          console.log('here', d)
           d3.select("#groups").append('g')
                               .attr('class', 'group_bubble')
                               .text(d)
