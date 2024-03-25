@@ -14,12 +14,25 @@
         font-family: 'Lato', sans-serif;
       }
 
+      h1 {
+        z-index: 2;
+        position: absolute;
+        top: 0;
+        left: 0;
+        padding: 0.25em;
+        margin: 0;
+        background-color: rgba(255, 255, 255, 0.85);
+        box-sizing: border-box;
+        width: 70%;
+        font-size: 1.5em;
+      }
+
       main {
         display: flex;
       }
 
       #graph-container {
-        width: 80vw;
+        width: 70vw;
       }
       
       #graph {
@@ -28,10 +41,12 @@
       }
 
       #detail-sidebar {
-        width: 20%;
+        width: 30%;
         height: 100vh;
+        max-height: 100vh;
+        overflow-y: hidden;
         position: absolute;
-        z-index: 0;
+        z-index: 2;
         right: 0;
         background-color: white;
         border-left: solid 1px lightgray;
@@ -61,44 +76,67 @@
       }
 
       /* styling for sidebar */
-      .group_bubble{
+      .group_bubble {
         border-style: solid;
         border-radius: 5px;
         margin:5px;
         padding: 5px;
         display: inline-block;
       }
-      #detail-sidebar-div{
+
+      #detail-sidebar-div {
         margin-left: 20px;
       }
-      #name{
+
+      #name {
         font-size: 20px;
         font-weight: bold;
       }
 
+      .y.gridlines line {
+        stroke: lightgray;
+      }
+
       /* styling for song table */
-      .theads{
+      .theads {
         position: sticky;
         top:0;
         background-color: white;
         position: -webkit-sticky;
         z-index: 999;
       }
-      th, td{
+
+      th, td {
         font-size: 9px;
+        text-align: left;
       }
-      tr{
-        border: solid thin
+
+      tr {
+        border: solid thin;
+        width: 28vw;
       }
       
       table {
-        display: block;
-        height: 230px;
+        display: table;
+        max-height: 28vh;
+        width: 28vw;
         overflow-y: scroll;
         margin:5px;
         border-collapse: collapse; 
       }
-      #tabletitle{
+
+      #song_table_container {
+        height: 28vh;
+        overflow-y: scroll;
+        /* position: absolute;
+        bottom: 0; */
+      }
+
+      thead {
+        width: 30vw;
+      }
+
+      #tabletitle {
         margin-left: 10px;
         font-size: 15px;
       }
@@ -111,6 +149,7 @@
    <body>
     <main>
         <div id="graph-container">
+            <h1>Collaborations Between NCT Members</h1>
             <svg id="graph" width="100vw" height ="100vh">
             </svg>
         </div>
@@ -122,9 +161,9 @@
               <p id="position"></p>
               <p id="totalsongs"></p>
             </div>
-            <svg id="barchart" width="260" height ="300"></svg>
-            <div id="tabletitle"></div>
-            <div id="song_table_container"></div>
+            <svg id="barchart" width="30vw" height ="50vh"></svg>
+            <!-- <div id="tabletitle"></div> -->
+            <div id="song_table_container"><p id="tabletitle"></p></div>
         </aside>
     </main>
   </body>
@@ -169,8 +208,8 @@
 
       // bar chart ------------------------------------------------------------------
       const barchart = d3.select("svg#barchart");
-      const barchartWidth = barchart.attr("width");
-      const barchartHeight = barchart.attr("height");
+      const barchartWidth = window.innerWidth * 0.3 - 20;
+      const barchartHeight = window.innerHeight * 0.5;
       const margin = {top: 10, right: 10, bottom: 70, left: 50};
       const chartWidth = barchartWidth - margin.left - margin.right;
       const chartHeight = barchartHeight - margin.top - margin.bottom;
@@ -191,6 +230,7 @@
         let leftGridlines = d3.axisLeft(songScale)
                               .tickSize(-chartWidth-10)
                               .tickFormat("").tickValues(leftAxisTicks)
+                   
         annotations.append("g")
                   .attr("class", "y axis")
                   .attr("transform",`translate(${margin.left-10},${margin.top})`)
@@ -213,14 +253,19 @@
                         .style("text-anchor", "end")
                         .attr("dx", "-.8em")
                         .attr("dy", ".15em").attr("transform", "rotate(-65)")
+
+        console.log(nodes)
         
         chartArea.selectAll('rect.bar').data(connections)
                   .join('rect').attr('class','bar')
-                  .attr("fill", "steelblue")
+                  .attr("fill", (d) => {
+                    return color(nodes.filter(node => node.name == d[0])[0].groups[0])
+                  }) 
                   .attr("x", d => membersXAxisScale(d[0]))
                   .attr("y", d => songScale(d[1]))
                   .attr("height", d => songScale(0) - songScale(d[1]))
-                  .attr("width", membersXAxisScale.bandwidth());
+                  .attr("width", membersXAxisScale.bandwidth())
+                  .attr("name", d => d[0]);
 
 
          //handle mouseover of barchart bars 
@@ -243,11 +288,13 @@
         });
         //handle mouseout of barchart bars
         barchartBars.on('mouseout', function(event, d){
-          d3.select(this).style("fill", "steelblue")
+          d3.select(this).style("fill", (d) => { 
+                 
+                    return color(nodes.filter(node => node.name == d[0])[0].groups[0])
+                  }) 
         })
 
       }
-
 
       // create list of # of songs each node shares with others as "connections"
       nodes.forEach(n=>{ 
@@ -273,9 +320,7 @@
                                         // .strength (function (d) {return (d.weight)})
                                         .strength(d => d.weight*0.01)
                                         // .distance(d=>console.log(d))
-                                        )
-
-                // .force("link", d3.forceLink(links))
+                )
 
                                                 // if source and target don't provide array indices for nodes, .id will tell the force what to look for in the nodes when it is trying to connect things together. Provide a getter function for _node elements_
                 .force("repulse", d3.forceManyBody().strength(-5000) ) // electrostatic repulsion between all nodes to space them out
@@ -298,8 +343,6 @@
                             .style('opacity', 0.6)
                             .attr("fill", "none")
             )
-            // .attr("x1", d => d.source.x).attr("x2", d => d.target.x)   // Using the pointers d3.forceLink provides to access node x and y coords
-            // .attr("y1", d => d.source.y).attr("y2", d => d.target.y);
             .attr("d", function(d) { // taken from https://stackoverflow.com/questions/13455510/curved-line-on-d3-force-directed-tree
             var dx = d.target.x - d.source.x,
                 dy = d.target.y - d.source.y,
@@ -321,8 +364,6 @@
                             createNodeDonut(d3.select(this), ['none'])
                           }
                       });
-                      
-
                   })
                 
         // handle mouseover of nodes
@@ -333,7 +374,6 @@
             resetNetwork();
             highlightNetwork(d);
             hoverUpdate(d.name); 
-
         }});
 
         // handle mouseout of nodes
@@ -341,7 +381,6 @@
             if (!d3.select("#detail-sidebar").classed("clicked")) {
               clearSidebar();
               resetNetwork();
-              
             }
           });
 
@@ -352,8 +391,6 @@
           // removeTable();
 
         });
-
-        
 
         function highlightNetwork(d) {
           let connectedNames = []; // tracking names of nodes connected to the hovered node
@@ -385,9 +422,7 @@
         function resetNetwork() {
           nodeGroups.classed('unconnected-node', false)
           d3.selectAll("path.link").classed('hovered-arc', false).lower().attr("stroke", "rgb(231, 231, 231)")
-        
         }
-      
       }
       render();
 
@@ -468,9 +503,6 @@
         d3.select("#position").text(`Position: ${member_details[selectedNode[0].index].position}`)
 
         d3.select("#totalsongs").text(`Total songs in dataset: ${selectedNode[0].weight}`)
-
-        
-
       }
 
       function hoverUpdate(name) {
@@ -510,8 +542,6 @@
           d3.select("#tabletitle").text("")
           d3.selectAll('#barchart g').remove()
           removeTable();
-
-          
         }
       }
 
@@ -560,8 +590,6 @@
                         .enter()
                         .append('td')
                           .text(function (d) { return d.value; });
-                                        
-
         }
 
     }
