@@ -62,7 +62,6 @@
 
       /* -- styling force diagram elements -- */
       .hovered-arc {
-        /* stroke: black; */
         z-index: 4;
       }
 
@@ -87,9 +86,6 @@
         flex-direction: column;
         gap: 1em;
         margin: auto;
-        /* top: 50%;
-        -ms-transform: translateY(-50%);
-        transform: translateY(-50%); */
         padding: 1em;
       }
 
@@ -172,11 +168,12 @@
         </div>
 
         <aside id="detail-sidebar">
+            <!-- <img src="close.svg" alt="close details" width="20" height="20" /> -->
             <div id="intro" class="intro-text">
-              <p>NCT is a Korean pop group consisting of 26 members (23 shown). Highly active since 2016, NCT has released over 400 songs and have recorded over 32 million album sales to date.</p>
+              <p>NCT is a Korean pop group consisting of 26 members (23 shown). Highly active since 2016, NCT has released over 400 songs and has recorded over 32 million album sales to date.</p>
               <p>NCT's most unique feature is their use of subunits, which include given subsets of the band's members and often promote music separately. However, some band members belong to multiple subunits, and members frequently collaborate across subunits on specific songs.</p>
-              <p>The result is a complex network credited with giving NCT its reputation of being highly versatile and experimental as a group.</p>
-              <p>To explore the network, hover over nodes. To explore a person's song collaborations in detail, click and hover on the resulting bar chart. </p>
+              <p>The result is a complex network credited with giving NCT a reputation of being highly versatile and experimental as a group.</p>
+              <p>To explore the network, hover over nodes, zoom, and pan. To explore a person's song collaborations in detail, click on a node and hover over the resulting bar chart. </p>
               <div id="legend">
                 <p>Subunit Legend:</p>
                 <div id="legend-groups">
@@ -231,8 +228,6 @@
       const songs_sorted = d3.sort(songs, (d) => d.datetime)
 
       const member_details = await d3.csv("members_unique_subunits.csv");
-      
-      
 
       // --------------------------------------------------------------
 
@@ -416,8 +411,6 @@
           resetNetwork();
           highlightNetwork(d);
           clickUpdate(d.name);
-          // removeTable();
-
         });
 
         function highlightNetwork(d) {
@@ -462,8 +455,6 @@
         const donutWidth = weightScale(weight);
         const donutHeight = donutWidth;
         const radius = donutWidth / 2;
-
-        console.log(groups)
 
         const arc = d3.arc()
             .innerRadius(radius * 0.8) 
@@ -529,12 +520,9 @@
                               .style('background-color', color(d))
                               .style('color', (color(d)==="#264653") ? 'white' : 'black')
         })
-        // d3.select("#groups").text(selectedNode[0].groups);
 
         d3.select("#position").text(`Position: ${member_details[selectedNode[0].index].position}`)
-
         d3.select("#totalsongs").text(`Total songs in dataset: ${selectedNode[0].weight}`)
-
         d3.select("#bar-instructions").text("Hover over the bars to see shared songs.");
       }
 
@@ -561,10 +549,9 @@
                               .style('background-color', color(d))
                               .style('color', (color(d)==="#264653") ? 'white' : 'black')
         })
-
         d3.select("#position").text(`Position: ${member_details[selectedNode[0].index].position}`)
-
         d3.select("#totalsongs").text(`Total songs in dataset: ${selectedNode[0].weight}`)
+        d3.select("#bar-instructions").text("Click on this node and hover over the bars to see shared songs.");
       }
 
       function clearSidebar() {
@@ -573,6 +560,7 @@
           d3.select("#groups").text("");
           d3.select('#position').text("")
           d3.select('#totalsongs').text("")
+          d3.select("#bar-instructions").text("");
           d3.select("#tabletitle").text("")
           d3.selectAll('#barchart g').remove()
           removeTable();
@@ -614,7 +602,6 @@
                         .enter()
                         .append('tr');
 
-        
         var cells = rows.selectAll('td')
                         .data(function (row) {
                           return columns.map(function (column) {
@@ -625,14 +612,8 @@
                         .append('td')
                           .text(function (d) { return d.value; });
         }
-
     }
-
-    
-
-    
-    requestData()
-
+    requestData();
   </script>
 
 
