@@ -56,6 +56,10 @@
         margin: 5px;
       }
 
+      .hidden {
+        display: none !important;
+      }
+
       /* -- styling force diagram elements -- */
       .hovered-arc {
         /* stroke: black; */
@@ -76,6 +80,24 @@
       }
 
       /* styling for sidebar */
+      #intro {
+        position: absolute;
+        z-index: 5;
+        display: flex;
+        flex-direction: column;
+        gap: 1em;
+        margin: auto;
+        /* top: 50%;
+        -ms-transform: translateY(-50%);
+        transform: translateY(-50%); */
+        padding: 1em;
+      }
+
+      .legend-row {
+        display: flex;
+        align-items: center;
+      }
+
       .group_bubble {
         border-style: solid;
         border-radius: 5px;
@@ -128,8 +150,6 @@
       #song_table_container {
         height: 28vh;
         overflow-y: scroll;
-        /* position: absolute;
-        bottom: 0; */
       }
 
       thead {
@@ -140,9 +160,6 @@
         margin-left: 10px;
         font-size: 15px;
       }
-      
-
-      
     </style>
    </head>
 
@@ -155,14 +172,45 @@
         </div>
 
         <aside id="detail-sidebar">
+            <div id="intro" class="intro-text">
+              <p>NCT is a Korean pop group consisting of 26 members (23 shown). Highly active since 2016, NCT has released over 400 songs and have recorded over 32 million album sales to date.</p>
+              <p>NCT's most unique feature is their use of subunits, which include given subsets of the band's members and often promote music separately. However, some band members belong to multiple subunits, and members frequently collaborate across subunits on specific songs.</p>
+              <p>The result is a complex network credited with giving NCT its reputation of being highly versatile and experimental as a group.</p>
+              <p>To explore the network, hover over nodes. To explore a person's song collaborations in detail, click and hover on the resulting bar chart. </p>
+              <div id="legend">
+                <p>Subunit Legend:</p>
+                <div id="legend-groups">
+                  <div class="legend-row">
+                    <img src="NCT127.svg" alt="NCT 127" width="20" height="20"/>
+                    <p>NCT 127</p>
+                  </div>
+                  <div class="legend-row">
+                    <img src="NCTDREAM.svg" alt="NCT DREAM" width="20" height="20"/>
+                    <p>NCT DREAM</p>
+                  </div>
+                  <div class="legend-row">
+                    <img src="SuperM.svg" alt="SuperM" width="20" height="20"/>
+                    <p>SuperM</p>
+                  </div>
+                  <div class="legend-row">
+                    <img src="WayV.svg" alt="WayV" width="20" height="20"/>
+                    <p>WayV</p>
+                  </div>
+                  <div class="legend-row">
+                    <img src="no-subunit.svg" alt="No Subunit" width="20" height="20"/>
+                    <p>No Subunit</p>
+                  </div>
+                </div>
+              </div>
+            </div>
             <div id="detail-sidebar-div">
               <p id="name"></p>
               <div id="groups"></div>
               <p id="position"></p>
               <p id="totalsongs"></p>
+              <p id="bar-instructions"></p>
             </div>
             <svg id="barchart" width="30vw" height ="50vh"></svg>
-            <!-- <div id="tabletitle"></div> -->
             <div id="song_table_container"><p id="tabletitle"></p></div>
         </aside>
     </main>
@@ -346,7 +394,7 @@
         // handle mouseover of nodes
         let nodeGroups = d3.selectAll(".node"); 
         nodeGroups.on("mouseover", function(event, d) { 
-          
+          d3.select("#intro").classed("hidden", true);
           if (!d3.select("#detail-sidebar").classed("clicked")) {
             resetNetwork();
             highlightNetwork(d);
@@ -355,13 +403,16 @@
 
         // handle mouseout of nodes
         nodeGroups.on("mouseout", function(event, d) {
+          
             if (!d3.select("#detail-sidebar").classed("clicked")) {
               clearSidebar();
               resetNetwork();
+              d3.select("#intro").classed("hidden", false);
             }
           });
 
         nodeGroups.on("click", function(event, d) {
+          d3.select("#intro").classed("hidden", true);
           resetNetwork();
           highlightNetwork(d);
           clickUpdate(d.name);
@@ -483,6 +534,8 @@
         d3.select("#position").text(`Position: ${member_details[selectedNode[0].index].position}`)
 
         d3.select("#totalsongs").text(`Total songs in dataset: ${selectedNode[0].weight}`)
+
+        d3.select("#bar-instructions").text("Hover over the bars to see shared songs.");
       }
 
       function hoverUpdate(name) {
