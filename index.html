@@ -181,7 +181,6 @@
         </div>
 
         <aside id="detail-sidebar">
-            <!-- <img src="close.svg" alt="close details" width="20" height="20" /> -->
             <div id="intro" class="intro-text">
               <p>NCT is a Korean pop group consisting of 26 members (23 shown). Highly active since 2016, NCT has released over 400 songs and has recorded over 32 million album sales to date.</p>
               <p>NCT's most unique feature is their use of subunits, which include given subsets of the band's members and often promote music separately. However, some band members belong to multiple subunits, and members frequently collaborate across subunits on specific songs.</p>
@@ -362,8 +361,6 @@
                 .force("links", d3.forceLink()  
                                         .links(links)           
                                         .id( d => d['name'] )
-                                        // .strength(d=> d.weight)
-                                        // .strength (function (d) {return (d.weight)})
                                         .strength(d => d.weight*0.01)
                 )
                 .force("repulse", d3.forceManyBody().strength(-5000)) 
@@ -521,13 +518,13 @@
         container.attr("x", -50)
                   .attr("y", -50)
                   .attr("name", d => d.name)
-                  .attr("transform", d => `translate(${d.x},${d.y})`)
+                  .attr("transform", d => `translate(${d.x},${d.y})`);
         
         return container;
       }
 
       function clickUpdate(name) {
-        d3.select("#detail-sidebar").classed("clicked", true)
+        d3.select("#detail-sidebar").classed("clicked", true);
 
         let selectedNode = nodes.filter(d => {
           if (d.name === name) {
@@ -542,7 +539,8 @@
         d3.select("#name").text(selectedNode[0].name);
 
         //clear initial bubbles 
-        d3.selectAll('#groups g').remove()
+        d3.selectAll('#groups g').remove();
+
         //add new bubbles
         selectedNode[0].groups.forEach(d=>{
           d3.select("#groups").append('g')
@@ -566,12 +564,12 @@
 
         d3.selectAll('#barchart g').remove()
 
-        makeBarChart(selectedNode, selectedNode[0].connections)
+        makeBarChart(selectedNode, selectedNode[0].connections);
              
         d3.select("#name").text(selectedNode[0].name);
 
         //clear initial bubbles 
-        d3.selectAll('#groups g').remove()
+        d3.selectAll('#groups g').remove();
         //add new bubbles
         selectedNode[0].groups.forEach(d=>{
           d3.select("#groups").append('g')
@@ -646,7 +644,4 @@
     }
     requestData();
   </script>
-
-
-
 </html>
