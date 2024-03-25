@@ -105,12 +105,12 @@
     {
       "name": "Shotaro",
       "weight": 7,
-      "groups": []
+      "groups": ["No Subunit"]
     },
     {
       "name": "Sungchan",
       "weight": 6,
-      "groups": []
+      "groups": ["No Subunit"]
     },
     {
       "name": "Renjun",
