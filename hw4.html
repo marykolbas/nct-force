@@ -294,7 +294,7 @@
               enter => enter.append("path")
                             .attr("class","link")
                             .attr("stroke","rgb(231, 231, 231)") 
-                            .attr("stroke-width", 2)
+                            .attr("stroke-width", d=> d.weight)
                             .style('opacity', 0.6)
                             .attr("fill", "none")
             )
@@ -332,7 +332,8 @@
           if (!d3.select("#detail-sidebar").classed("clicked")) {
             resetNetwork();
             highlightNetwork(d);
-            hoverUpdate(d.name);
+            hoverUpdate(d.name); 
+
         }});
 
         // handle mouseout of nodes
@@ -340,6 +341,7 @@
             if (!d3.select("#detail-sidebar").classed("clicked")) {
               clearSidebar();
               resetNetwork();
+              
             }
           });
 
@@ -347,7 +349,7 @@
           resetNetwork();
           highlightNetwork(d);
           clickUpdate(d.name);
-          removeTable();
+          // removeTable();
 
         });
 
@@ -477,15 +479,39 @@
             return d;
           }
         });
-        
+
+        d3.selectAll('#barchart g').remove()
+
+        makeBarChart(selectedNode, selectedNode[0].connections)
+             
         d3.select("#name").text(selectedNode[0].name);
-        // d3.select("#groups").text(selectedNode[0].groups);
+
+        //clear initial bubbles 
+        d3.selectAll('#groups g').remove()
+        //add new bubbles
+        selectedNode[0].groups.forEach(d=>{
+          d3.select("#groups").append('g')
+                              .attr('class', 'group_bubble')
+                              .text(d)
+                              .style('background-color', color(d))
+        })
+
+        d3.select("#position").text(`Position: ${member_details[selectedNode[0].index].position}`)
+
+        d3.select("#totalsongs").text(`Total songs in dataset: ${selectedNode[0].weight}`)
       }
 
       function clearSidebar() {
         if (!d3.select("#detail-sidebar").classed("clicked")) {
           d3.select("#name").text("");
           d3.select("#groups").text("");
+          d3.select('#position').text("")
+          d3.select('#totalsongs').text("")
+          d3.select("#tabletitle").text("")
+          d3.selectAll('#barchart g').remove()
+          removeTable();
+
+          
         }
       }
 
