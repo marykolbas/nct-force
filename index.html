@@ -329,7 +329,7 @@
           barchartBars.style("fill", (d) => { 
                  return color(nodes.filter(node => node.name == d[0])[0].groups[0])
                })
-          d3.select(this).style("fill", "red")
+          d3.select(this).style("fill", "purple")
     
           links.filter(e => {
             if ((d[0] === e.target.name && e.source.name === selectedNode[0].name) || (d[0] === e.source.name && e.target.name === selectedNode[0].name)) {
